@@ -5,11 +5,11 @@ export const theme = {
   version: '1.0',
   title: 'default',
   font: {
-    family: `'Roboto', sans-serif`,
+    family: `'Roboto', sans-serif`
   },
   colors: {
     gradient: {
-      primary: 'linear-gradient(180deg, #091421 0%, #0A2A4E 98.02%)',
+      primary: 'linear-gradient(180deg, #091421 0%, #0A2A4E 98.02%)'
     },
     primary: {
       p50: '#8EBEF5',
@@ -21,7 +21,7 @@ export const theme = {
       p600: '#163961',
       p700: '#103157',
       p800: '#0A2A4E',
-      p900: '#3CBEC3',
+      p900: '#3CBEC3'
     },
     neutral: {
       n50: '#CAD9EB',
@@ -31,9 +31,9 @@ export const theme = {
       n400: '#9CA3AF',
       n500: '#6B7280',
       n600: '#4B5563',
-      n700: '#374151',
+      n700: '#212934',
       n800: '#1A202E',
-      n900: '#111827',
+      n900: '#111827'
     },
     dark: {
       d50: '#C3C4D8',
@@ -47,11 +47,11 @@ export const theme = {
       d800: '#272730',
       d850: '#23232B',
       d900: '#201E26',
-      d950: '#1b2334',
+      d950: '#1b2334'
     },
     shades: {
       white: '#ffffff',
-      black: '#000000',
+      black: '#000000'
     },
     greenMud: {
       gm50: '#F7FCE8',
@@ -63,7 +63,7 @@ export const theme = {
       gm600: '#B2CD37',
       gm700: '#A2B72E',
       gm800: '#93A026',
-      gm900: '#7A7916',
+      gm900: '#7A7916'
     },
     blue: {
       b50: '#E3F1FC',
@@ -75,7 +75,7 @@ export const theme = {
       b600: '#3781DD',
       b700: '#326FC9',
       b800: '#2E5EB7',
-      b900: '#0053A6',
+      b900: '#0053A6'
     },
     orange: {
       o50: '#FDECEE',
@@ -87,7 +87,7 @@ export const theme = {
       o600: '#D6513A',
       o700: '#C44834',
       o800: '#B7432E',
-      o900: '#A73B25',
+      o900: '#A73B25'
     },
     green: {
       g50: '#F0FDF4',
@@ -99,7 +99,7 @@ export const theme = {
       g600: '#16A34A',
       g700: '#15803D',
       g800: '#166534',
-      g900: '#14532D',
+      g900: '#14532D'
     },
     red: {
       r50: '#FEF2F2',
@@ -111,7 +111,7 @@ export const theme = {
       r600: '#DC2626',
       r700: '#B91C1C',
       r800: '#991B1B',
-      r900: '#7F1D1D',
+      r900: '#7F1D1D'
     },
     warning: {
       w50: '#FFFBEB',
@@ -123,23 +123,23 @@ export const theme = {
       w600: '#D97706',
       w700: '#B45309',
       w800: '#92400E',
-      w900: '#78350F',
-    },
-  },
+      w900: '#78350F'
+    }
+  }
 };
 
 export const dark = {
   ...theme,
   title: 'dark' as Theme['title'],
   colors: {
-    ...theme.colors,
-  },
+    ...theme.colors
+  }
 };
 
 export const light = {
   ...theme,
   title: 'light' as Theme['title'],
   colors: {
-    ...theme.colors,
-  },
+    ...theme.colors
+  }
 };

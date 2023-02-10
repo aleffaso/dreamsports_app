@@ -1,43 +1,44 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { config, library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import * as S from './styles';
-
-config.autoAddCss = false;
-library.add(faEnvelope, faPhone, faInstagram, faFacebook, faTwitter, faLinkedin);
+import Link from 'next/link';
+import {
+  EnvelopeSimple,
+  FacebookLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  Phone,
+  TwitterLogo
+} from 'phosphor-react';
 
 export const Header = () => {
   return (
     <S.Wrapper>
-      <nav>
+      <S.ContactBar>
         <S.Container>
-          <S.Row>
-            <div>
-              <FontAwesomeIcon icon="envelope" size="1x" />
-              <a href="mailto:ravitejakolla29@gmail.com"> info@company.com</a>
-              <FontAwesomeIcon icon="phone" size="1x" />
-              <a href="tel:010-020-0340"> 010-020-0340</a>
-            </div>
-            <div>
-              <a href="mailto:ravitejakolla29@gmail.com">
-                <FontAwesomeIcon icon={['fab', 'facebook']} size="1x" />
-              </a>
-              <a>
-                <FontAwesomeIcon icon={['fab', 'instagram']} size="1x" />
-              </a>
-              <a href="mailto:ravitejakolla29@gmail.com">
-                <FontAwesomeIcon icon={['fab', 'linkedin']} size="1x" />
-              </a>
-              <a>
-                <FontAwesomeIcon icon={['fab', 'twitter']} size="1x" />
-              </a>
-            </div>
-          </S.Row>
+          <div>
+            <EnvelopeSimple />
+            <Link href="mailto:ravitejakolla29@gmail.com"> info@company.com</Link>
+            <Phone />
+            <Link href="tel:010-020-0340"> 010-020-0340</Link>
+          </div>
+          <div>
+            <Link href="mailto:ravitejakolla29@gmail.com">
+              <FacebookLogo />
+            </Link>
+            <Link href="mailto:ravitejakolla29@gmail.com">
+              <InstagramLogo />
+            </Link>
+            <Link href="mailto:ravitejakolla29@gmail.com">
+              <LinkedinLogo />
+            </Link>
+            <Link href="mailto:ravitejakolla29@gmail.com">
+              <TwitterLogo />
+            </Link>
+          </div>
         </S.Container>
-      </nav>
+      </S.ContactBar>
+      <S.Header>
+        <S.Container>Hello</S.Container>
+      </S.Header>
     </S.Wrapper>
   );
 };
