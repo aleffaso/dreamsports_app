@@ -29,6 +29,18 @@ export const ContactBar = styled.section`
         color: ${({ theme }) => theme.colors.neutral.n200};
         text-decoration: none;
       }
+      @media (max-width: 414px) {
+        &:nth-child(1) {
+          a {
+            font-size: 0.875rem;
+          }
+        }
+        &:nth-child(2) {
+          svg {
+            font-size: 16px;
+          }
+        }
+      }
     }
   }
 `;
