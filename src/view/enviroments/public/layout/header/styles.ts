@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Device } from '../../../../../helpers/screens';
 
 export const Wrapper = styled.header`
   width: 100vw;
@@ -29,11 +30,9 @@ export const ContactBar = styled.section`
         color: ${({ theme }) => theme.colors.neutral.n200};
         text-decoration: none;
       }
-      @media (max-width: 414px) {
+      @media ${Device.max('mobile', 'lg')} {
         &:nth-child(1) {
-          a {
-            font-size: 0.875rem;
-          }
+          opacity: 0;
         }
         &:nth-child(2) {
           svg {
@@ -46,7 +45,7 @@ export const ContactBar = styled.section`
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  width: 90%;
   max-width: 1440px;
 `;
 
@@ -57,4 +56,9 @@ export const Header = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
