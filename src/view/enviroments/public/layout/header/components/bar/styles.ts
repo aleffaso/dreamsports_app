@@ -1,17 +1,19 @@
 import styled from 'styled-components';
-import { transformFont } from '../../../../../../../utils';
+import { Device } from '../../../../../../../helpers/screens';
+import { DisplayFlexCenter } from '../../../../../../../styles';
 
 export const Wrapper = styled.nav`
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${DisplayFlexCenter}
   gap: 8px;
-  & > a {
-    font-size: ${transformFont.toRem(30)};
+  & > a > svg {
+    font-size: 30px;
     color: ${({ theme }) => theme.colors.neutral.n900};
+    &:hover {
+      color: ${({ theme }) => theme.colors.neutral.n500};
+    }
   }
-  & > a:hover {
-    color: ${({ theme }) => theme.colors.neutral.n500};
+  @media ${Device.max('tablet', 'md')} {
+    gap: 32px;
   }
 `;

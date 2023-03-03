@@ -11,6 +11,7 @@ import {
 } from 'phosphor-react';
 import { Menu } from './components/menu';
 import { Bar } from './components/bar';
+import { BREAK_POINTS } from '../../../../../helpers/screens';
 
 export const Header = () => {
   return (
@@ -41,15 +42,16 @@ export const Header = () => {
       </S.ContactBar>
       <S.Header>
         <S.Container>
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              width={100}
-              height={50}
-              alt="Logotipo Dream Sports Co"
-              style={{ width: 'auto', height: '67px' }}
-            />
-          </Link>
+          <S.Logo>
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Logotipo Dream Sports Co"
+                fill
+                sizes={`(max-width:${BREAK_POINTS.mobile.lg}px) 33%`}
+              />
+            </Link>
+          </S.Logo>
           <Menu />
           <Bar />
         </S.Container>

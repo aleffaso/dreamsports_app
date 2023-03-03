@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Device } from '../../../../../helpers/screens';
+import { DisplayFlexCenter } from '../../../../../styles';
 
 export const Wrapper = styled.header`
   width: 100vw;
@@ -9,9 +10,7 @@ export const ContactBar = styled.section`
   background-color: ${({ theme }) => theme.colors.neutral.n800};
   width: 100%;
   height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${DisplayFlexCenter}
   & > div {
     display: flex;
     justify-content: space-between;
@@ -46,6 +45,7 @@ export const ContactBar = styled.section`
 
 export const Container = styled.div`
   width: 90%;
+  height: 100%;
   max-width: 1440px;
 `;
 
@@ -53,12 +53,31 @@ export const Header = styled.section`
   width: 100%;
   height: 92px;
   background-color: ${({ theme }) => theme.colors.shades.white};
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${DisplayFlexCenter}
   & > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+`;
+
+export const Logo = styled.div`
+  position: relative;
+  width: 67px;
+  height: 100%;
+  ${DisplayFlexCenter}
+  padding: 18px 0;
+  & > a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    ${DisplayFlexCenter}
+  }
+  @media ${Device.max('mobile', 'lg')} {
+    width: 50px;
+    height: calc(50px * 0.83);
+    & > a {
+      height: calc(50px * 0.83);
+    }
   }
 `;
