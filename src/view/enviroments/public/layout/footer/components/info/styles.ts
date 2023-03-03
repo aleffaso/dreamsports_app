@@ -1,18 +1,21 @@
 import styled from 'styled-components';
-import { transformFont } from '../../../../../../../utils';
+import { Device } from '../../../../../../../helpers/screens';
 
 export const Wrapper = styled.section`
-  width: 90%;
+  width: 100%;
   max-width: 1440px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 16px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.n600};
+  @media ${Device.max('tablet', 'md')} {
+    display: block;
+  }
 `;
 
 export const Container = styled.section`
   width: 100%;
   display: flex;
   justify-content: left;
-  align-items: left;
-  & > h1 {
-    font-size: ${transformFont.toRem(40)};
-    color: ${({ theme }) => theme.colors.neutral.n400};
-  }
+  align-items: center;
 `;

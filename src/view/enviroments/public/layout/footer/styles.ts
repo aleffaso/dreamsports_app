@@ -9,6 +9,6 @@ export const Wrapper = styled.footer`
 
 export const Container = styled.div`
   max-width: 1440px;
-  width: 100%;
+  width: 90%;
   height: 600px;
 `;
