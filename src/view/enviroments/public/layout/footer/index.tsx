@@ -1,4 +1,5 @@
 import { Info } from './components/info';
+import { Contact } from './components/contact/';
 import * as S from './styles';
 
 export const Footer = () => {
@@ -6,6 +7,7 @@ export const Footer = () => {
     <S.Wrapper>
       <S.Container>
         <Info />
+        <Contact />
       </S.Container>
     </S.Wrapper>
   );

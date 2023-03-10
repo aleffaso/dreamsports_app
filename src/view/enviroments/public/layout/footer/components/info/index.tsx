@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { MapPin } from 'phosphor-react';
 import { Article } from './components/article';
-import { listAddress } from './components/article/mapped';
+import { listAddress, listProducts, listInfo } from './components/article/mapped';
 import * as S from './styles';
 
 export const Info = () => {
@@ -21,12 +20,11 @@ export const Info = () => {
         }
       />
       <Article
-        title="DreamSports"
+        title="Products"
         content={
           <>
-            {listAddress.map((item, index) => (
+            {listProducts.map((item, index) => (
               <Link key={index} href={item.href}>
-                {item.icon}
                 {item.title}
               </Link>
             ))}
@@ -34,12 +32,11 @@ export const Info = () => {
         }
       />
       <Article
-        title="DreamSports"
+        title="Information"
         content={
           <>
-            {listAddress.map((item, index) => (
+            {listInfo.map((item, index) => (
               <Link key={index} href={item.href}>
-                {item.icon}
                 {item.title}
               </Link>
             ))}

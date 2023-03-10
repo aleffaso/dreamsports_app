@@ -4,17 +4,16 @@ import { transformFont } from '../../../../../../../../../utils';
 
 export const Wrapper = styled.article`
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: start;
   flex-direction: column;
   & > h1 {
-    display: flex;
-    font-size: ${transformFont.toRem(40)};
+    font-size: ${transformFont.toRem(30)};
     color: ${({ theme }) => theme.colors.shades.white};
-    padding: 16px;
+    padding: 16px 0px;
     border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.n600};
     @media ${Device.max('tablet', 'md')} {
-      font-size: ${transformFont.toRem(32)};
+      font-size: ${transformFont.toRem(24)};
     }
   }
   & > div > span,
@@ -30,6 +29,12 @@ export const Wrapper = styled.article`
     }
     &:hover {
       color: ${({ theme }) => theme.colors.neutral.n500};
+    }
+  }
+  & > div {
+    @media ${Device.max('tablet', 'md')} {
+      padding-bottom: 8px;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.n600};
     }
   }
 `;

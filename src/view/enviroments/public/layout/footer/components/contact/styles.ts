@@ -5,12 +5,12 @@ export const Wrapper = styled.section`
   width: 100%;
   max-width: 1440px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding-bottom: 24px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.n600};
+  padding-top: 16px;
+  padding: 20px 0;
   @media ${Device.max('tablet', 'md')} {
-    display: block;
-    border-bottom: none;
-    padding-bottom: 0px;
+    flex-direction: column;
+    gap: 10px;
   }
 `;
