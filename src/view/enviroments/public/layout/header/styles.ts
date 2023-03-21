@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Device } from '../../../../../helpers/screens';
-import { DisplayFlexCenter } from '../../../../../styles';
+import { DisplayFlexCenter, DisplayFlexCenterBetween } from '../../../../../styles';
 
 export const Wrapper = styled.header`
   width: 100vw;
@@ -12,14 +12,10 @@ export const ContactBar = styled.section`
   height: 40px;
   ${DisplayFlexCenter}
   & > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    ${DisplayFlexCenterBetween}
     padding: 0 16px;
     & > div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      ${DisplayFlexCenter}
       gap: 8px;
       color: ${({ theme }) => theme.colors.neutral.n200};
       svg {
@@ -55,9 +51,7 @@ export const Header = styled.section`
   background-color: ${({ theme }) => theme.colors.shades.white};
   ${DisplayFlexCenter}
   & > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    ${DisplayFlexCenterBetween}
   }
 `;
 

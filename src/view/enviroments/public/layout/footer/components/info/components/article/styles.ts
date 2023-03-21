@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Device } from '../../../../../../../../../helpers/screens';
+import { DisplayFlexCenterFlexStart } from '../../../../../../../../../styles';
 import { transformFont } from '../../../../../../../../../utils';
 
 export const Wrapper = styled.article`
@@ -18,9 +19,7 @@ export const Wrapper = styled.article`
   }
   & > div > span,
   a {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    ${DisplayFlexCenterFlexStart}
     gap: 8px;
     color: ${({ theme }) => theme.colors.neutral.n300};
     padding-top: 8px;
