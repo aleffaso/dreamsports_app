@@ -4,10 +4,6 @@ import { DisplayFlexCenterFlexStart } from '../../../../../../../../../styles';
 import { transformFont } from '../../../../../../../../../utils';
 
 export const Wrapper = styled.article`
-  display: flex;
-  align-items: left;
-  justify-content: start;
-  flex-direction: column;
   & > h1 {
     font-size: ${transformFont.toRem(30)};
     color: ${({ theme }) => theme.colors.shades.white};

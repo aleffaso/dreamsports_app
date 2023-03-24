@@ -1,28 +1,30 @@
 import Image from 'next/image';
-import { Star } from 'phosphor-react';
 import { Card } from './components/card';
-import { ProductsCatalogue } from './components/card/mapped';
-import { CardBody } from './components/card/styles';
+import { ProductsCatalogue } from './mapped';
 import * as S from './styles';
+import { StarRating } from '../../../../components/star-rating';
+import { formatCurrency } from '../../../../../utils';
 
 export const Products = () => {
   return (
     <S.Wrapper>
       <Card
-        title=""
         content={
           <>
             {ProductsCatalogue.map((item, index) => (
-              <CardBody key={index}>
+              <S.CardBody key={index}>
                 <Image src={item.src} alt={item.title} width={300} height={250} />
-                <div>
-                  <Star weight="fill" /> {item.price}
-                  {/**TODO function to show 5 stars according to rating */}
+                <div className="ratingPrice">
+                  <div>
+                    <StarRating rating={item.rating} />
+                  </div>
+                  {formatCurrency(item.price)}
                 </div>
-                <div>{item.title}</div>
-                <div>{item.info}</div>
-              </CardBody>
+                <span>{item.title}</span>
+                <p>{item.info}</p>
+              </S.CardBody>
             ))}
+            {/**TODO Verificar numeros produtos e adequar para o comportamento de display grid */}
           </>
         }
       />

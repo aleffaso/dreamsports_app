@@ -1,5 +1,5 @@
 import * as S from './styles';
-type Props = { title: string; content: React.ReactNode };
+type Props = { content: React.ReactNode };
 
 export const Card = ({ content }: Props) => {
   return (

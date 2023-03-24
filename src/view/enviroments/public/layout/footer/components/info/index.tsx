@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Article } from './components/article';
-import { listAddress, listProducts, listInfo } from './components/article/mapped';
+import { listAddress, listProducts, listInfo } from './mapped';
 import * as S from './styles';
 
 export const Info = () => {

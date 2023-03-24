@@ -26,24 +26,5 @@ export const Wrapper = styled.div`
         }
       }
     }
-    & > button {
-      cursor: pointer;
-      width: 100px;
-      height: 42px;
-      border-width: 0px;
-      border-radius: 8px;
-      background-color: ${({ theme }) => theme.colors.green.g600};
-      color: ${({ theme }) => theme.colors.neutral.n100};
-      font-size: ${transformFont.toRem(18)};
-      font-weight: 400;
-      &:hover {
-        color: ${({ theme }) => theme.colors.neutral.n900};
-      }
-      @media ${Device.max('tablet', 'md')} {
-        width: 100px;
-        height: 40px;
-        font-size: ${transformFont.toRem(16)};
-      }
-    }
   }
 `;

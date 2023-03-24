@@ -13,3 +13,8 @@ export const transformFont: ITransformFont = {
     return `${value / 16}rem`;
   }
 };
+
+export const formatCurrency = (value: string | number) => {
+  value === null || undefined ? (value = 0.0) : isNaN(Number(value)) ? (value = 0.0) : value;
+  return String(Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+};
