@@ -4,14 +4,43 @@ import { DisplayFlexCenter } from '../../../../../styles';
 import { transformFont } from '../../../../../utils';
 
 export const Wrapper = styled.section`
-  width: 100vw;
-  height: 600px;
+  width: 100%;
+  height: auto;
   background-color: ${({ theme }) => theme.colors.neutral.n400};
-  ${DisplayFlexCenter}
+  padding: 30px 0 0 0;
+  & > h1 {
+    ${DisplayFlexCenter}
+    font-weight: 300;
+    font-size: ${transformFont.toRem(32)};
+    color: ${({ theme }) => theme.colors.neutral.n800};
+  }
+  & > p {
+    text-align: center;
+    padding: 30px 0 0 0;
+    font-weight: 300;
+    font-size: ${transformFont.toRem(24)};
+    color: ${({ theme }) => theme.colors.neutral.n800};
+  }
+  & > div > div {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 60px;
+    gap: 30px;
+
+    @media ${Device.max('tablet', 'md')} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media ${Device.max('mobile', 'lg')} {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 `;
 
 export const CardBody = styled.div`
-  width: 300px;
+  width: 400px;
   height: 500px;
   background-color: ${({ theme }) => theme.colors.shades.white};
   border-radius: 10px;
@@ -49,12 +78,8 @@ export const CardBody = styled.div`
     overflow: hidden;
   }
   @media ${Device.max('tablet', 'md')} {
-    width: 220px;
-    height: 400px;
-    & > img {
-      width: 220px;
-      height: 170px;
-    }
+    width: 350px;
+    height: 500px;
     & > div {
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};
@@ -68,22 +93,17 @@ export const CardBody = styled.div`
     }
   }
   @media ${Device.max('mobile', 'lg')} {
-    width: 250px;
-    height: 160px;
-    & > img {
-      width: 250px;
-      height: 160px;
-      border-radius: 10px;
-    }
+    width: 400px;
+    height: 500px;
     & > div {
-      &:nth-child(2) {
-        display: none;
+      & > .ratingPrice {
+        font-size: ${transformFont.toRem(18)};
       }
       &:nth-child(3) {
-        display: none;
+        font-size: ${transformFont.toRem(20)};
       }
       &:nth-child(4) {
-        display: none;
+        font-size: ${transformFont.toRem(14)};
       }
     }
   }

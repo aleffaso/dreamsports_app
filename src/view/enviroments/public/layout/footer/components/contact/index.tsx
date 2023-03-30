@@ -27,7 +27,6 @@ export const Contact = () => {
             <form>
               <input type="text" placeholder="E-mail" />
               <Button title="Subscribe" type="submit" icon={<PaperPlaneTilt weight="fill" />} />
-              {/**TODO Add button to Component */}
             </form>
           </>
         }

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Device } from '../../../../../../../helpers/screens';
 import { DisplayFlexCenter } from '../../../../../../../styles';
-import { transformFont } from '../../../../../../../utils';
 
 export const Wrapper = styled.div`
   width: 100%;

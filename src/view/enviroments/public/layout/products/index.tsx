@@ -8,12 +8,17 @@ import { formatCurrency } from '../../../../../utils';
 export const Products = () => {
   return (
     <S.Wrapper>
+      <h1>Featured Product</h1>
+      <p>
+        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident.
+      </p>
       <Card
         content={
           <>
             {ProductsCatalogue.map((item, index) => (
               <S.CardBody key={index}>
-                <Image src={item.src} alt={item.title} width={300} height={250} />
+                <Image src={item.src} alt={item.title} width={400} height={300} />
                 <div className="ratingPrice">
                   <div>
                     <StarRating rating={item.rating} />
