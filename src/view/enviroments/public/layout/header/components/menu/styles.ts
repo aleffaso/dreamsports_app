@@ -30,6 +30,7 @@ export const Wrapper = styled.nav<{ isOpen: boolean }>`
           position: absolute;
           top: 132px;
           left: 0;
+          z-index: 1;
         `}
     }
   }

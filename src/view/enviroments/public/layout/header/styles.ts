@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Device } from '../../../../../helpers/screens';
 import { DisplayFlexCenter, DisplayFlexCenterBetween } from '../../../../../styles';
+import { transformFont } from '../../../../../utils';
 
 export const Wrapper = styled.header`
   width: 100vw;
@@ -12,8 +13,9 @@ export const ContactBar = styled.section`
   height: 40px;
   ${DisplayFlexCenter}
   & > div {
-    ${DisplayFlexCenterBetween}
-    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     & > div {
       ${DisplayFlexCenter}
       gap: 8px;
@@ -27,11 +29,11 @@ export const ContactBar = styled.section`
       }
       @media ${Device.max('mobile', 'lg')} {
         &:nth-child(1) {
-          opacity: 0;
+          font-size: ${transformFont.toRem(10)};
         }
         &:nth-child(2) {
           svg {
-            font-size: 16px;
+            font-size: ${transformFont.toRem(16)};
           }
         }
       }
