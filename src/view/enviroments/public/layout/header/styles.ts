@@ -13,9 +13,7 @@ export const ContactBar = styled.section`
   height: 40px;
   ${DisplayFlexCenter}
   & > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    ${DisplayFlexCenterBetween}
     & > div {
       ${DisplayFlexCenter}
       gap: 8px;
@@ -28,6 +26,9 @@ export const ContactBar = styled.section`
         text-decoration: none;
       }
       @media ${Device.max('mobile', 'lg')} {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         &:nth-child(1) {
           font-size: ${transformFont.toRem(10)};
         }
