@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import { Device } from '../../../helpers/screens';
+import { DisplayFlexCenter } from '../../../styles';
 
 export const Wrapper = styled.div`
   width: 100%;
   overflow-x: hidden;
+  ${DisplayFlexCenter}
   & > div {
+    width: 90%;
+    max-width: 1440px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
