@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  width: 100%;
+  width: 100vw;
   height: 82px;
   background-color: ${({ theme }) => theme.colors.neutral.n900};
   display: flex;

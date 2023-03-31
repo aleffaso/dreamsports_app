@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { Card } from './components/card';
+import { Card } from '../../../../../../components/card';
 import { ProductsCatalogue } from './mapped';
 import * as S from './styles';
-import { StarRating } from '../../../../components/star-rating';
-import { formatCurrency } from '../../../../../utils';
+import { StarRating } from '../../../../../../components/star-rating';
+import { formatCurrency } from '../../../../../../../utils';
 
 export const Products = () => {
   return (
@@ -11,7 +11,7 @@ export const Products = () => {
       <h1>Featured Product</h1>
       <p>
         Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident.
+        occaecat.
       </p>
       <Card
         content={
@@ -29,7 +29,6 @@ export const Products = () => {
                 <p>{item.info}</p>
               </S.CardBody>
             ))}
-            {/**TODO Verificar numeros produtos e adequar para o comportamento de display grid */}
           </>
         }
       />

@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import { Device } from '../../../../../helpers/screens';
-import { DisplayFlexCenter } from '../../../../../styles';
-import { transformFont } from '../../../../../utils';
+import { Device } from '../../../../../../../helpers/screens';
+import { DisplayFlexCenter } from '../../../../../../../styles';
+import { transformFont } from '../../../../../../../utils';
 
 export const Wrapper = styled.section`
-  width: 100%;
-  height: auto;
   background-color: ${({ theme }) => theme.colors.neutral.n400};
   padding: 30px 0 0 0;
   & > h1 {
@@ -15,32 +13,25 @@ export const Wrapper = styled.section`
     color: ${({ theme }) => theme.colors.neutral.n800};
   }
   & > p {
+    margin: 0 25%;
     text-align: center;
     padding: 30px 0 0 0;
     font-weight: 300;
     font-size: ${transformFont.toRem(24)};
     color: ${({ theme }) => theme.colors.neutral.n800};
-  }
-  & > div > div {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 30px 60px;
-    gap: 30px;
 
     @media ${Device.max('tablet', 'md')} {
-      grid-template-columns: repeat(2, 1fr);
+      margin: 0 15%;
     }
 
     @media ${Device.max('mobile', 'lg')} {
-      grid-template-columns: repeat(1, 1fr);
+      margin: 0 0;
     }
   }
 `;
 
 export const CardBody = styled.div`
-  width: 400px;
+  width: min(400px, 100%);
   height: 500px;
   background-color: ${({ theme }) => theme.colors.shades.white};
   border-radius: 10px;
@@ -78,8 +69,6 @@ export const CardBody = styled.div`
     overflow: hidden;
   }
   @media ${Device.max('tablet', 'md')} {
-    width: 350px;
-    height: 500px;
     & > div {
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};
@@ -93,8 +82,6 @@ export const CardBody = styled.div`
     }
   }
   @media ${Device.max('mobile', 'lg')} {
-    width: 400px;
-    height: 500px;
     & > div {
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};

@@ -41,6 +41,10 @@ export const Wrapper = styled.button<{
       css`
         background: ${({ theme }) => theme.colors.neutral.n600};
         border-color: ${({ theme }) => theme.colors.neutral.n600};
+        &:hover {
+          color: ${({ theme }) => theme.colors.neutral.n600};
+          background: transparent;
+        }
       `}
       ${color === 'success' &&
       css`
