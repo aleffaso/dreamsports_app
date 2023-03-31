@@ -20,9 +20,9 @@ export const Header = () => {
         <S.Container>
           <div>
             <EnvelopeSimple />
-            <Link href="mailto:ravitejakolla29@gmail.com"> info@company.com</Link>
+            <Link href="mailto:ravitejakolla29@gmail.com">contato@dreamsportsco.com</Link>
             <Phone />
-            <Link href="tel:010-020-0340"> 010-020-0340</Link>
+            <Link href="tel:010-020-0340">(14) 9 9999-9999</Link>
           </div>
           <div>
             <Link href="mailto:ravitejakolla29@gmail.com">

@@ -11,7 +11,7 @@ export const Menu = () => {
       <div>
         {menuList.map((item, index) => (
           <Link href={item.href} key={index}>
-            {item.name}
+            {item.title}
           </Link>
         ))}
       </div>

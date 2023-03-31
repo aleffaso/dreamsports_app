@@ -1,18 +1,18 @@
 export const menuList = [
   {
     href: '/',
-    name: 'Home'
+    title: 'Início'
   },
   {
     href: '/',
-    name: 'About'
+    title: 'Sobre'
   },
   {
     href: '/',
-    name: 'Shop'
+    title: 'Produtos'
   },
   {
     href: '/',
-    name: 'Contact'
+    title: 'Contato'
   }
 ];

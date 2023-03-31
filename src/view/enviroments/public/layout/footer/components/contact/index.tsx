@@ -26,7 +26,7 @@ export const Contact = () => {
             {/**Vericar melhor forma de fazer formulário */}
             <form>
               <input type="text" placeholder="E-mail" />
-              <Button title="Subscribe" type="submit" icon={<PaperPlaneTilt weight="fill" />} />
+              <Button title="Se inscrever" type="submit" icon={<PaperPlaneTilt weight="fill" />} />
             </form>
           </>
         }

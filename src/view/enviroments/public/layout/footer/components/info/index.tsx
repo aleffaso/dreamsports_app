@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { CategoriesCatalogue } from '../../../../home-page/components/sections/categories/mapped';
+import { menuList } from '../../../header/components/menu/mapped';
 import { Article } from './components/article';
-import { listAddress, listProducts, listInfo } from './mapped';
+import { listAddress } from './mapped';
 import * as S from './styles';
 
 export const Info = () => {
@@ -20,10 +22,10 @@ export const Info = () => {
         }
       />
       <Article
-        title="Products"
+        title="Categorias"
         content={
           <>
-            {listProducts.map((item, index) => (
+            {CategoriesCatalogue.map((item, index) => (
               <Link key={index} href={item.href}>
                 {item.title}
               </Link>
@@ -32,10 +34,10 @@ export const Info = () => {
         }
       />
       <Article
-        title="Information"
+        title="Informações"
         content={
           <>
-            {listInfo.map((item, index) => (
+            {menuList.map((item, index) => (
               <Link key={index} href={item.href}>
                 {item.title}
               </Link>

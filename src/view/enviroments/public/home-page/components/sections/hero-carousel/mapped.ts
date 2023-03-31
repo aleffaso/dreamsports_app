@@ -1,17 +1,17 @@
 export const carouselList = [
   {
     alt: 'carousel1',
-    src: 'https://cdn.wallpapersafari.com/94/35/mqjc3C.jpeg',
+    src: 'https://cdn.mos.cms.futurecdn.net/g6fS2fNgpwzE7N5DkvFGkj.jpg',
     href: '/'
   },
   {
     alt: 'carousel2',
-    src: 'https://c.wallhere.com/photos/a6/bb/1920x1440_px_Bicycle_men_water-598587.jpg!d',
+    src: 'https://cdn.shopify.com/s/files/1/0448/4762/8451/files/IMG_1882_1.jpg?v=1663758868&width=3000',
     href: '/'
   },
   {
     alt: 'carousel3',
-    src: 'https://wallpapercave.com/wp/wp9878178.jpg',
+    src: 'https://i0.wp.com/bikenaveia.com.br/wp-content/uploads/2021/03/Modelos-de-Mountain-Bike-para-usar-em-seu-Pedal.jpg',
     href: '/'
   }
 ];

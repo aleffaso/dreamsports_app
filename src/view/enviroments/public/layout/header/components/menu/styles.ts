@@ -10,7 +10,8 @@ export const Wrapper = styled.nav<{ isOpen: boolean }>`
     ${DisplayFlexCenter}
     gap: 64px;
     & > a {
-      font-size: ${transformFont.toRem(18)};
+      font-size: ${transformFont.toRem(20)};
+      font-weight: 500;
       color: ${({ theme }) => theme.colors.neutral.n900};
       &:hover {
         color: ${({ theme }) => theme.colors.neutral.n500};

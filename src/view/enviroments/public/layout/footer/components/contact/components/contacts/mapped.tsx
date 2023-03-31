@@ -1,10 +1,4 @@
-import {
-  EnvelopeSimple,
-  FacebookLogo,
-  InstagramLogo,
-  LinkedinLogo,
-  TwitterLogo
-} from 'phosphor-react';
+import { EnvelopeSimple, FacebookLogo, InstagramLogo, TwitterLogo } from 'phosphor-react';
 
 export const listContacts = [
   { icon: <EnvelopeSimple weight="fill" />, href: '/' },

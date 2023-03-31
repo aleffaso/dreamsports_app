@@ -8,11 +8,8 @@ import { formatCurrency } from '../../../../../../../utils';
 export const Products = () => {
   return (
     <S.Wrapper>
-      <h1>Featured Product</h1>
-      <p>
-        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat.
-      </p>
+      <h1>Produtos</h1>
+      <p>Já disponíveis para sua bike</p>
       <Card
         content={
           <>

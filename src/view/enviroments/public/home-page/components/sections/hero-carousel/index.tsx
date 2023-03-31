@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ArrowButton } from './components/arrow-button';
 
 export const HeroCarousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 

@@ -7,11 +7,8 @@ import * as S from './styles';
 export const Categories = () => {
   return (
     <S.Wrapper>
-      <h1>Categories of The Month</h1>
-      <p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-        anim id est.
-      </p>
+      <h1>Categorias</h1>
+      <p>Acompanhe nossos mais recentes lançamentos</p>
       <Card
         content={
           <>
@@ -19,7 +16,7 @@ export const Categories = () => {
               <S.CategoryBody key={index}>
                 <Image src={item.src} alt={item.title} width={300} height={300} />
                 <span>{item.title}</span>
-                <Button title="Go Shop" color={'neutral'} />
+                <Button title="Comprar" color={'neutral'} />
               </S.CategoryBody>
             ))}
           </>

@@ -6,7 +6,7 @@ const nextConfig = {
     styledComponents: true
   },
   images: {
-    domains: ['cdn.wallpapersafari.com', 'c.wallhere.com', 'wallpapercave.com']
+    domains: ['cdn.mos.cms.futurecdn.net', 'cdn.shopify.com', 'i0.wp.com']
   }
 };
 

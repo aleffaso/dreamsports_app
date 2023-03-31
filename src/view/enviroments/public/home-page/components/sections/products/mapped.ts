@@ -1,26 +1,26 @@
 export const ProductsCatalogue = [
   {
     href: '/',
-    src: '/prod1.jpg',
-    title: 'Product 1',
+    src: '/prod1.png',
+    title: 'Kit de Proteção - Blue Lightning',
+    rating: 5,
+    price: 99.99,
+    info: 'Desenhado para proteger e encaixar perfeitamente na sua bike'
+  },
+  {
+    href: '/',
+    src: '/prod2.png',
+    title: 'Kit de Proteção - Tartan 202020',
     rating: 4,
     price: 99.99,
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.'
+    info: 'Nossa mais nova edição limitada 202020 para proteção da sua bike'
   },
   {
     href: '/',
-    src: '/prod2.jpg',
-    title: 'Product 2',
-    rating: 1,
-    price: 29.99,
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.'
-  },
-  {
-    href: '/',
-    src: '/prod3.jpg',
-    title: 'Product 3',
-    rating: 0,
-    price: 19.99,
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.'
+    src: '/prod3.png',
+    title: 'Adesivo - Bandeira americana',
+    rating: 3,
+    price: 229.9,
+    info: 'Traga mais estilo para sua bike com nosso mais novo adesivo Mudguard Decal'
   }
 ];

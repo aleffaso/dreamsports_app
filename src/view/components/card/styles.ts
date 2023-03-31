@@ -7,12 +7,12 @@ export const Wrapper = styled.div`
   overflow-x: hidden;
   ${DisplayFlexCenter}
   & > div {
-    width: 90%;
+    width: 100%;
     max-width: 1440px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
-    padding: 30px 60px;
+    padding: 30px 30px;
     gap: 30px;
 
     @media ${Device.max('tablet', 'md')} {

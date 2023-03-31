@@ -1,17 +1,17 @@
 export const CategoriesCatalogue = [
   {
     href: '/',
-    src: '/category1.jpg',
-    title: 'Category 1'
+    src: '/category1.png',
+    title: 'Proteção'
   },
   {
     href: '/',
-    src: '/category2.jpg',
-    title: 'Category 2'
+    src: '/category2.png',
+    title: 'Acessórios'
   },
   {
     href: '/',
-    src: '/category3.jpg',
-    title: 'Category 3'
+    src: '/category3.png',
+    title: 'Equipamentos'
   }
 ];
