@@ -1,45 +1,33 @@
 import * as S from './styles';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  EnvelopeSimple,
-  FacebookLogo,
-  InstagramLogo,
-  LinkedinLogo,
-  Phone,
-  TwitterLogo
-} from 'phosphor-react';
+import { EnvelopeSimple, Phone } from 'phosphor-react';
 import { Menu } from './components/menu';
 import { Bar } from './components/bar';
 import { BREAK_POINTS } from '../../../../../helpers/screens';
+import { addressList, contactsList } from './components/menu/mapped';
 
 export const Header = () => {
   return (
     <S.Wrapper>
       <S.ContactBar>
-        <S.Container>
-          <div>
-            <EnvelopeSimple />
-            <Link href="mailto:ravitejakolla29@gmail.com">contato@dreamsportsco.com</Link>
-            <Phone />
-            <Link href="tel:010-020-0340">(14) 9 9999-9999</Link>
-          </div>
-          <div>
-            <Link href="mailto:ravitejakolla29@gmail.com">
-              <FacebookLogo />
+        <div>
+          {addressList.map((item, index) => (
+            <Link key={index} href={item.href}>
+              {item.icon}
+              {item.title}
             </Link>
-            <Link href="mailto:ravitejakolla29@gmail.com">
-              <InstagramLogo />
+          ))}
+        </div>
+        <div>
+          {contactsList.map((item, index) => (
+            <Link key={index} href={item.href}>
+              {item.icon}
             </Link>
-            <Link href="mailto:ravitejakolla29@gmail.com">
-              <LinkedinLogo />
-            </Link>
-            <Link href="mailto:ravitejakolla29@gmail.com">
-              <TwitterLogo />
-            </Link>
-          </div>
-        </S.Container>
+          ))}
+        </div>
       </S.ContactBar>
+      {/*TODO: fix header position to entire page*/}
       <S.Header>
         <S.Container>
           <S.Logo>

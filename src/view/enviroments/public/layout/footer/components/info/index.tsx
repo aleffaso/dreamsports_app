@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { CategoriesCatalogue } from '../../../../home-page/components/sections/categories/mapped';
-import { menuList } from '../../../header/components/menu/mapped';
+import { addressList, menuList } from '../../../header/components/menu/mapped';
 import { Article } from './components/article';
-import { listAddress } from './mapped';
 import * as S from './styles';
 
 export const Info = () => {
@@ -12,7 +11,7 @@ export const Info = () => {
         title="DreamSports"
         content={
           <>
-            {listAddress.map((item, index) => (
+            {addressList.map((item, index) => (
               <Link key={index} href={item.href}>
                 {item.icon}
                 {item.title}

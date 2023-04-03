@@ -11,33 +11,27 @@ export const ContactBar = styled.section`
   background-color: ${({ theme }) => theme.colors.neutral.n800};
   width: 100%;
   height: 40px;
-  ${DisplayFlexCenter}
+  ${DisplayFlexCenterBetween}
   & > div {
-    ${DisplayFlexCenterBetween}
-    & > div {
+    ${DisplayFlexCenter}
+    gap: 10px;
+    margin: 70px;
+    & > a {
       ${DisplayFlexCenter}
-      gap: 8px;
-      color: ${({ theme }) => theme.colors.neutral.n200};
-      svg {
+      gap: 5px;
+      color: ${({ theme }) => theme.colors.shades.white};
+      & > svg {
         font-size: 20px;
       }
-      a {
-        color: ${({ theme }) => theme.colors.neutral.n200};
-        text-decoration: none;
-      }
       @media ${Device.max('mobile', 'lg')} {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        &:nth-child(1) {
-          font-size: ${transformFont.toRem(10)};
-        }
-        &:nth-child(2) {
-          svg {
-            font-size: ${transformFont.toRem(16)};
-          }
-        }
+        font-size: ${transformFont.toRem(10)};
       }
+    }
+    @media ${Device.max('tablet', 'md')} {
+      margin: 40px;
+    }
+    @media ${Device.max('mobile', 'lg')} {
+      margin: 5px;
     }
   }
 `;

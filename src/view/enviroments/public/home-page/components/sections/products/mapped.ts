@@ -1,4 +1,4 @@
-export const ProductsCatalogue = [
+export const productsCatalogue = [
   {
     href: '/',
     src: '/prod1.png',

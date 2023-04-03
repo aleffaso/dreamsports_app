@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { PaperPlaneTilt } from 'phosphor-react';
 import { Button } from '../../../../../../components/buttons/button';
+import { contactsList } from '../../../header/components/menu/mapped';
 import { Contacts } from './components/contacts';
-import { listContacts } from './components/contacts/mapped';
 import { Subscribe } from './components/subscribe';
 import * as S from './styles';
 
@@ -12,7 +12,7 @@ export const Contact = () => {
       <Contacts
         content={
           <>
-            {listContacts.map((item, index) => (
+            {contactsList.map((item, index) => (
               <Link key={index} href={item.href}>
                 {item.icon}
               </Link>

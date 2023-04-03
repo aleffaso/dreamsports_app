@@ -13,6 +13,8 @@ export const Wrapper = styled.div`
       border-width: 0px;
       padding: 0px 10px;
       border-radius: 8px;
+      font-size: ${transformFont.toRem(18)};
+      font-weight: 400;
       &::placeholder {
         color: ${({ theme }) => theme.colors.neutral.n900};
         opacity: 0.5;

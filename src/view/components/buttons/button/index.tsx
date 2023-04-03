@@ -6,7 +6,7 @@ export type Props = {
   rounded?: boolean;
   color?: 'primary' | 'neutral' | 'success' | 'warning' | 'error';
   icon?: React.ReactNode;
-  title?: string;
+  title?: string | number;
   description?: string;
   type?: 'button' | 'submit';
   disabled?: boolean;

@@ -65,7 +65,7 @@ export const CardBody = styled.div`
     color: ${({ theme }) => theme.colors.neutral.n900};
     text-align: center;
     padding: 0 18px;
-    height: 130px;
+    height: 45px;
     overflow: hidden;
   }
   @media ${Device.max('tablet', 'md')} {
