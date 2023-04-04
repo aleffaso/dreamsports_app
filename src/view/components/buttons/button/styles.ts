@@ -63,7 +63,7 @@ export const Wrapper = styled.button<{
       `}
       ${color === 'transparent' &&
       css`
-        color: ${({ theme }) => theme.colors.neutral.n600};
+        color: ${({ theme }) => theme.colors.neutral.n900};
         background: ${({ theme }) => theme.colors.shades.white};
         border-color: ${({ theme }) => theme.colors.shades.white};
       `}
