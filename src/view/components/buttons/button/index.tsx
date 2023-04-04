@@ -4,7 +4,7 @@ import * as S from './styles';
 export type Props = {
   variant?: 'solid' | 'outline';
   rounded?: boolean;
-  color?: 'primary' | 'neutral' | 'success' | 'warning' | 'error';
+  color?: 'primary' | 'neutral' | 'success' | 'warning' | 'error' | 'transparent';
   icon?: React.ReactNode;
   title?: string | number;
   description?: string;

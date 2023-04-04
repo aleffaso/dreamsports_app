@@ -6,7 +6,8 @@ export const productsList = [
     rating: 5,
     price: 99.99,
     info: 'Desenhado para proteger e encaixar perfeitamente na sua bike',
-    category: 'Proteção'
+    category: 'Proteção',
+    slug: 'kit-de-proteção---blue-lightning'
   },
   {
     href: '/',
@@ -15,7 +16,8 @@ export const productsList = [
     rating: 4,
     price: 99.99,
     info: 'Nossa mais nova edição limitada 202020 para proteção da sua bike',
-    category: 'Acessórios'
+    category: 'Acessórios',
+    slug: 'kit-de-proteção---tartan-202020'
   },
   {
     href: '/',
@@ -24,7 +26,8 @@ export const productsList = [
     rating: 3,
     price: 229.9,
     info: 'Traga mais estilo para sua bike com nosso mais novo adesivo Mudguard Decal',
-    category: 'Proteção'
+    category: 'Proteção',
+    slug: 'kit-de-proteção---bandeira-americana'
   },
   {
     href: '/',
@@ -33,7 +36,8 @@ export const productsList = [
     rating: 5,
     price: 99.99,
     info: 'Desenhado para proteger e encaixar perfeitamente na sua bike',
-    category: 'Equipamentos'
+    category: 'Equipamentos',
+    slug: 'kit-de-proteção---blue-lightning'
   },
   {
     href: '/',
@@ -42,7 +46,8 @@ export const productsList = [
     rating: 4,
     price: 99.99,
     info: 'Nossa mais nova edição limitada 202020 para proteção da sua bike',
-    category: 'Acessórios'
+    category: 'Acessórios',
+    slug: 'kit-de-proteção---tartan-202020'
   },
   {
     href: '/',
@@ -51,7 +56,8 @@ export const productsList = [
     rating: 3,
     price: 229.9,
     info: 'Traga mais estilo para sua bike com nosso mais novo adesivo Mudguard Decal',
-    category: 'Equipamentos'
+    category: 'Equipamentos',
+    slug: 'kit-de-proteção---bandeira-americana'
   },
   {
     href: '/',
@@ -60,7 +66,8 @@ export const productsList = [
     rating: 5,
     price: 99.99,
     info: 'Desenhado para proteger e encaixar perfeitamente na sua bike',
-    category: 'Proteção'
+    category: 'Proteção',
+    slug: 'kit-de-proteção---blue-lightning'
   },
   {
     href: '/',
@@ -69,7 +76,8 @@ export const productsList = [
     rating: 4,
     price: 99.99,
     info: 'Nossa mais nova edição limitada 202020 para proteção da sua bike',
-    category: 'Equipamentos'
+    category: 'Equipamentos',
+    slug: 'kit-de-proteção---tartan-202020'
   },
   {
     href: '/',
@@ -78,6 +86,7 @@ export const productsList = [
     rating: 3,
     price: 229.9,
     info: 'Traga mais estilo para sua bike com nosso mais novo adesivo Mudguard Decal',
-    category: 'Acessórios'
+    category: 'Acessórios',
+    slug: 'kit-de-proteção---bandeira-americana'
   }
 ];

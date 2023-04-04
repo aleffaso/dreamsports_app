@@ -1,19 +1,13 @@
-import Link from 'next/link';
 import { MagnifyingGlass, ShoppingCart, User } from 'phosphor-react';
+import { Button } from '../../../../../../components/buttons/button';
 import * as S from './styles';
 
 export const Bar = () => {
   return (
     <S.Wrapper>
-      <Link href="/">
-        <MagnifyingGlass />
-      </Link>
-      <Link href="/">
-        <ShoppingCart />
-      </Link>
-      <Link href="/">
-        <User />
-      </Link>
+      <Button color="transparent" icon={<MagnifyingGlass />} />
+      <Button color="transparent" icon={<ShoppingCart />} />
+      <Button color="transparent" icon={<User />} />
     </S.Wrapper>
   );
 };

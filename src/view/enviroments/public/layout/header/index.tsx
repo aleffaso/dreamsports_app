@@ -27,7 +27,7 @@ export const Header = () => {
           ))}
         </div>
       </S.ContactBar>
-      {/*TODO: fix header position to entire page*/}
+      {/**TODO: fix header into page */}
       <S.Header>
         <S.Container>
           <S.Logo>
