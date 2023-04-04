@@ -2,9 +2,9 @@ import { MouseEventHandler } from 'react';
 import * as S from './styles';
 
 export type Props = {
-  variant?: 'solid' | 'outline';
+  variant?: string | 'solid' | 'outline';
   rounded?: boolean;
-  color?: 'primary' | 'neutral' | 'success' | 'warning' | 'error' | 'transparent';
+  color?: string | 'primary' | 'neutral' | 'success' | 'warning' | 'error' | 'transparent';
   icon?: React.ReactNode;
   title?: string | number;
   description?: string;

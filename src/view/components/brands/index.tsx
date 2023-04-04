@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card } from '../../../../../components/card';
+import { Card } from '../card';
 import { brandsList } from './mapped';
 import * as S from './styles';
 

@@ -8,8 +8,8 @@ export const Wrapper = styled.section`
   padding: 30px 0 0 0;
   & > h1 {
     ${DisplayFlexCenter}
-    font-weight: 300;
-    font-size: ${transformFont.toRem(32)};
+    font-weight: 600;
+    font-size: ${transformFont.toRem(40)};
     color: ${({ theme }) => theme.colors.neutral.n800};
   }
   & > p {

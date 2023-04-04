@@ -5,7 +5,7 @@ import { EnvelopeSimple, Phone } from 'phosphor-react';
 import { Menu } from './components/menu';
 import { Bar } from './components/bar';
 import { BREAK_POINTS } from '../../../../../helpers/screens';
-import { addressList, contactsList } from './components/menu/mapped';
+import { addressList, contactsList } from './mapped';
 
 export const Header = () => {
   return (

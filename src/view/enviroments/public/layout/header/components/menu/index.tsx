@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { List } from 'phosphor-react';
 import { useState } from 'react';
-import { menuList } from './mapped';
+import { menuList } from '../../mapped';
 import * as S from './styles';
 
 export const Menu = () => {

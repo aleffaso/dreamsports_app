@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Button } from '../../../../../../components/buttons/button';
 import { Card } from '../../../../../../components/card';
-import { CategoriesCatalogue } from './mapped';
+import { categoriesCatalogue } from './mapped';
 import * as S from './styles';
 
 export const Categories = () => {
@@ -12,7 +12,7 @@ export const Categories = () => {
       <Card
         content={
           <>
-            {CategoriesCatalogue.map((item, index) => (
+            {categoriesCatalogue.map((item, index) => (
               <S.CategoryBody key={index}>
                 <Image src={item.src} alt={item.title} width={300} height={300} />
                 <span>{item.title}</span>

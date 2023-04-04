@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { PaperPlaneTilt } from 'phosphor-react';
 import { Button } from '../../../../../../components/buttons/button';
-import { contactsList } from '../../../header/components/menu/mapped';
+import { contactsList } from '../../../header/mapped';
 import { Contacts } from './components/contacts';
 import { Subscribe } from './components/subscribe';
 import * as S from './styles';

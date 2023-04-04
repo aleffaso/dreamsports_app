@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Device } from '../../../../../../helpers/screens';
-import { DisplayFlexCenter } from '../../../../../../styles';
-import { transformFont } from '../../../../../../utils';
+import { Device } from '../../../helpers/screens';
+import { DisplayFlexCenter } from '../../../styles';
+import { transformFont } from '../../../utils';
 
 export const Wrapper = styled.section`
   width: 100vw;
@@ -10,8 +10,8 @@ export const Wrapper = styled.section`
   padding: 30px 0 0 0;
   & > h1 {
     ${DisplayFlexCenter}
-    font-weight: 300;
-    font-size: ${transformFont.toRem(32)};
+    font-weight: 600;
+    font-size: ${transformFont.toRem(40)};
     color: ${({ theme }) => theme.colors.neutral.n800};
   }
   & > p {
@@ -30,19 +30,17 @@ export const Wrapper = styled.section`
       margin: 0 0;
     }
   }
-  & > div {
-    & > div {
-      align-items: center;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0px;
+  & > div > div {
+    align-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0px;
 
-      @media ${Device.max('tablet', 'md')} {
-        grid-template-columns: repeat(3, 1fr);
-      }
+    @media ${Device.max('tablet', 'md')} {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-      @media ${Device.max('mobile', 'lg')} {
-        grid-template-columns: repeat(1, 1fr);
-      }
+    @media ${Device.max('mobile', 'lg')} {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 `;

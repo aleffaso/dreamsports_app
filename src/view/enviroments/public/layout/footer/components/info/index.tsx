@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { CategoriesCatalogue } from '../../../../home-page/components/sections/categories/mapped';
-import { addressList, menuList } from '../../../header/components/menu/mapped';
+import { categoriesCatalogue } from '../../../../home-page/components/sections/categories/mapped';
+import { addressList, menuList } from '../../../header/mapped';
 import { Article } from './components/article';
 import * as S from './styles';
 
@@ -24,7 +24,7 @@ export const Info = () => {
         title="Categorias"
         content={
           <>
-            {CategoriesCatalogue.map((item, index) => (
+            {categoriesCatalogue.map((item, index) => (
               <Link key={index} href={item.href}>
                 {item.title}
               </Link>

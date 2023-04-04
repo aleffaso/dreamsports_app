@@ -1,13 +1,13 @@
-import { MagnifyingGlass, ShoppingCart, User } from 'phosphor-react';
 import { Button } from '../../../../../../components/buttons/button';
+import { barList } from '../../mapped';
 import * as S from './styles';
 
 export const Bar = () => {
   return (
     <S.Wrapper>
-      <Button color="transparent" icon={<MagnifyingGlass />} />
-      <Button color="transparent" icon={<ShoppingCart />} />
-      <Button color="transparent" icon={<User />} />
+      {barList.map((item, index) => (
+        <Button key={index} color={item.color} icon={item.icon} />
+      ))}
     </S.Wrapper>
   );
 };

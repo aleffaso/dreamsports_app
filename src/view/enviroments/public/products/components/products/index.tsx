@@ -4,7 +4,7 @@ import { formatCurrency } from '../../../../../../utils';
 import { Button } from '../../../../../components/buttons/button';
 import { Card } from '../../../../../components/card';
 import { StarRating } from '../../../../../components/star-rating';
-import { CategoriesCatalogue } from '../../../home-page/components/sections/categories/mapped';
+import { categoriesCatalogue } from '../../../home-page/components/sections/categories/mapped';
 import { productsList } from './mapped';
 import * as S from './styles';
 
@@ -28,7 +28,7 @@ export const Products = () => {
         <S.Products>
           <S.SearchBar>
             <div>
-              {CategoriesCatalogue.map((item, index) => (
+              {categoriesCatalogue.map((item, index) => (
                 <a key={index} href={item.src}>
                   {item.title}
                 </a>
