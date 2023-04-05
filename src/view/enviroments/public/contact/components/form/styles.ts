@@ -34,6 +34,9 @@ export const Wrapper = styled.section`
         &:focus {
           border: 2px solid ${({ theme }) => theme.colors.neutral.n800};
         }
+        &:focus:required:invalid {
+          border: 2px solid ${({ theme }) => theme.colors.red.r600};
+        }
         &::placeholder {
           opacity: 0.7;
         }
@@ -48,6 +51,9 @@ export const Wrapper = styled.section`
         outline: none;
         &:focus {
           border: 2px solid ${({ theme }) => theme.colors.neutral.n800};
+        }
+        &:focus:required:invalid {
+          border: 2px solid ${({ theme }) => theme.colors.red.r600};
         }
         &::placeholder {
           opacity: 0.7;
