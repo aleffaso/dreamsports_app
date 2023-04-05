@@ -5,9 +5,7 @@ import { transformFont } from '../../../../../../utils';
 
 export const Wrapper = styled.section`
   width: 100vw;
-  min-height: 500px;
   background-color: ${({ theme }) => theme.colors.neutral.n200};
-  padding: 30px 0;
   ${DisplayFlexCenter}
   gap: 40px;
   & > div {
@@ -29,6 +27,10 @@ export const Wrapper = styled.section`
       color: ${({ theme }) => theme.colors.neutral.n800};
     }
 
+    @media ${Device.max('tablet', 'md')} {
+      width: 40%;
+    }
+
     @media ${Device.max('mobile', 'lg')} {
       width: 90%;
       padding: 0 0 50px 0;
@@ -38,7 +40,7 @@ export const Wrapper = styled.section`
     filter: grayscale(100%);
 
     @media ${Device.max('tablet', 'md')} {
-      width: 350px;
+      width: 300px;
     }
     @media ${Device.max('mobile', 'lg')} {
       width: 250px;
