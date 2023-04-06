@@ -18,8 +18,8 @@ export const Wrapper = styled.section`
       display: grid;
       justify-items: stretch;
       padding: 15px 30px 30px 30px;
-      border-radius: 20px;
-      box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.shades.black};
+      border-radius: 10px;
+      box-shadow: 0px 0px 1px ${({ theme }) => theme.colors.shades.black}3F;
       & > label {
         color: ${({ theme }) => theme.colors.neutral.n700};
         padding: 10px 0;

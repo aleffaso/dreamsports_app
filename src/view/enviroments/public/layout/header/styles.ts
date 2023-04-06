@@ -46,6 +46,7 @@ export const Header = styled.section`
   width: 100%;
   height: 92px;
   background-color: ${({ theme }) => theme.colors.shades.white};
+  box-shadow: inset 0 0 5px 0 ${({ theme }) => theme.colors.shades.black}3F;
   ${DisplayFlexCenter}
   & > div {
     ${DisplayFlexCenterBetween}
