@@ -1,6 +1,6 @@
 export const productsList = [
   {
-    href: '/',
+    id: 1,
     src: '/prod1.png',
     title: 'Kit de Proteção - Blue Lightning',
     rating: 5,
@@ -10,7 +10,7 @@ export const productsList = [
     slug: 'kit-de-proteção---blue-lightning'
   },
   {
-    href: '/',
+    id: 2,
     src: '/prod2.png',
     title: 'Kit de Proteção - Tartan 202020',
     rating: 4,
@@ -20,7 +20,7 @@ export const productsList = [
     slug: 'kit-de-proteção---tartan-202020'
   },
   {
-    href: '/',
+    id: 3,
     src: '/prod3.png',
     title: 'Adesivo - Bandeira americana',
     rating: 3,
@@ -30,7 +30,7 @@ export const productsList = [
     slug: 'kit-de-proteção---bandeira-americana'
   },
   {
-    href: '/',
+    id: 4,
     src: '/prod1.png',
     title: 'Kit de Proteção - Blue Lightning',
     rating: 5,
@@ -40,7 +40,7 @@ export const productsList = [
     slug: 'kit-de-proteção---blue-lightning'
   },
   {
-    href: '/',
+    id: 5,
     src: '/prod2.png',
     title: 'Kit de Proteção - Tartan 202020',
     rating: 4,
@@ -50,7 +50,7 @@ export const productsList = [
     slug: 'kit-de-proteção---tartan-202020'
   },
   {
-    href: '/',
+    id: 6,
     src: '/prod3.png',
     title: 'Adesivo - Bandeira americana',
     rating: 3,
@@ -60,7 +60,7 @@ export const productsList = [
     slug: 'kit-de-proteção---bandeira-americana'
   },
   {
-    href: '/',
+    id: 7,
     src: '/prod1.png',
     title: 'Kit de Proteção - Blue Lightning',
     rating: 5,
@@ -70,7 +70,7 @@ export const productsList = [
     slug: 'kit-de-proteção---blue-lightning'
   },
   {
-    href: '/',
+    id: 8,
     src: '/prod2.png',
     title: 'Kit de Proteção - Tartan 202020',
     rating: 4,
@@ -80,7 +80,7 @@ export const productsList = [
     slug: 'kit-de-proteção---tartan-202020'
   },
   {
-    href: '/',
+    id: 9,
     src: '/prod3.png',
     title: 'Adesivo - Bandeira americana',
     rating: 3,

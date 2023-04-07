@@ -47,8 +47,8 @@ export const CategoryBody = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.neutral.n300};
     border-radius: 50%;
     cursor: pointer;
+    transition: 0.5s ease;
     &:hover {
-      transition: 0.5s ease;
       opacity: 50%;
     }
   }

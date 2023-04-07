@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Device } from '../../../helpers/screens';
 import { DisplayFlexCenter } from '../../../styles';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ paddingSide?: number }>`
   width: 100%;
   overflow-x: hidden;
   ${DisplayFlexCenter}
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
-    padding: 30px 30px;
+    padding: 30px ${({ paddingSide }) => paddingSide ?? 30}px;
     gap: 30px;
 
     @media ${Device.max('tablet', 'md')} {

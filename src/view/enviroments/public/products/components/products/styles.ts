@@ -11,7 +11,7 @@ export const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
+    gap: 36px;
     margin: 0 60px;
     @media ${Device.max('tablet', 'md')} {
       margin: 0 30px;
@@ -42,16 +42,12 @@ export const Categories = styled.div`
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     border-color: ${({ theme }) => theme.colors.neutral.n800};
+    border-top: 1px solid ${({ theme }) => theme.colors.neutral.n400};
+    padding: 10px 0;
     & > button {
       height: 30px;
       font-size: ${transformFont.toRem(14)};
     }
-  }
-
-  & > hr {
-    width: 90%;
-    margin: 10px 5%;
-    border: 1px solid ${({ theme }) => theme.colors.neutral.n400};
   }
 
   @media ${Device.max('tablet', 'md')} {
@@ -78,8 +74,6 @@ export const Categories = styled.div`
 export const Products = styled.div`
   width: 1240px;
   min-height: 1749px;
-  background-color: ${({ theme }) => theme.colors.neutral.n300};
-  border-radius: 20px;
 
   @media ${Device.max('tablet', 'md')} {
     width: 740px;
@@ -91,31 +85,31 @@ export const Products = styled.div`
   }
 `;
 
-export const SearchBar = styled.div`
+export const AuxiliarHeader = styled.div`
   width: 100%;
+  background-color: ${({ theme }) => theme.colors.neutral.n300};
+  border-radius: 20px;
   ${DisplayFlexCenterBetween}
   padding: 15px 30px;
   & > div {
-    &:first-child {
+    &.categories-button {
       ${DisplayFlexCenter}
       gap: 10px;
-      & > a {
-        font-size: ${transformFont.toRem(20)};
-        font-weight: 500;
-        color: ${({ theme }) => theme.colors.shades.black};
+      & > button {
+        font-size: ${transformFont.toRem(18)};
         &:hover {
-          color: ${({ theme }) => theme.colors.neutral.n500};
+          color: ${({ theme }) => theme.colors.neutral.n800};
         }
         @media ${Device.max('tablet', 'md')} {
           font-size: ${transformFont.toRem(16)};
         }
       }
     }
-    &:last-child {
+    &.search-bar {
       ${DisplayFlexCenter}
       gap: 10px;
       & > input {
-        width: 300px;
+        width: 280px;
         height: 42px;
         border-width: 0px;
         padding: 0px 10px;
@@ -133,15 +127,24 @@ export const SearchBar = styled.div`
           font-size: 24px;
         }
       }
+      @media ${Device.max('mobile', 'lg')} {
+        width: 100%;
+        background-color: ${({ theme }) => theme.colors.neutral.n300};
+        padding: 20px;
+        border-radius: 20px;
+      }
     }
   }
   @media ${Device.max('tablet', 'md')} {
-    display: block;
-    & > div {
-      &:last-child {
-        padding: 15px 0 0px 0;
-      }
-    }
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media ${Device.max('mobile', 'lg')} {
+    background-color: transparent;
+    flex-direction: column;
+    padding: 0;
+    gap: 30px;
   }
 `;
 
@@ -156,6 +159,12 @@ export const CardBody = styled.div`
   justify-content: flex-start;
   gap: 8px;
   overflow: hidden;
+  img {
+    transition: 0.5s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
   & > .ratingPrice {
     padding-top: 20px;
     display: flex;
@@ -169,11 +178,14 @@ export const CardBody = styled.div`
       gap: 4px;
     }
   }
-  & > span {
+  & > a.product-title {
     padding: 0 0 15px 0;
-    font-size: ${transformFont.toRem(22)};
+    font-size: ${transformFont.toRem(20)};
     color: ${({ theme }) => theme.colors.neutral.n900};
     text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   @media ${Device.max('tablet', 'md')} {
     & > div {

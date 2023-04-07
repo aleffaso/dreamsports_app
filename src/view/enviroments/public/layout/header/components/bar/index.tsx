@@ -1,5 +1,5 @@
 import { Button } from '../../../../../../components/buttons/button';
-import { barList } from '../../mapped';
+import { barList } from './mapped';
 import * as S from './styles';
 
 export const Bar = () => {

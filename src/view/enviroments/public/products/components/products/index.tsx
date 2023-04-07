@@ -7,53 +7,55 @@ import { StarRating } from '../../../../../components/star-rating';
 import { categoriesCatalogue } from '../../../home-page/components/sections/categories/mapped';
 import { productsList } from './mapped';
 import * as S from './styles';
+import Link from 'next/link';
 
 export const Products = () => {
   return (
     <S.Wrapper>
       <div>
         <S.Categories>
-          <h2>Categorias</h2>
-          <hr />
+          <h2>Filtros</h2>
           <div>
             <span>Preços</span>
             <Button color="neutral" icon={<CaretDown weight="fill" />} />
           </div>
-          <hr />
           <div>
             <span>Cores</span>
             <Button color="neutral" icon={<CaretDown weight="fill" />} />
           </div>
         </S.Categories>
         <S.Products>
-          <S.SearchBar>
-            <div>
+          <S.AuxiliarHeader>
+            <div className="categories-button">
               {categoriesCatalogue.map((item, index) => (
-                <a key={index} href={item.src}>
-                  {item.title}
-                </a>
+                <Button key={index} title={item.title} color="neutral" />
               ))}
             </div>
-            <div>
+            <div className="search-bar">
               <input placeholder="Buscar"></input>
               <Button color="neutral" icon={<MagnifyingGlass weight="fill" />} />
             </div>
-          </S.SearchBar>
+          </S.AuxiliarHeader>
           <Card
+            paddingSide={0}
             content={
               <>
                 {productsList.map((item, index) => (
                   <S.CardBody key={index}>
-                    <Image src={item.src} alt={item.title} width={400} height={300} />
+                    <Link href={`/products/${item.id}-${item.slug}`}>
+                      <Image src={item.src} alt={item.title} width={400} height={300} />
+                    </Link>
                     <div className="ratingPrice">
                       <div>
                         <StarRating rating={item.rating} />
                       </div>
                       {formatCurrency(item.price)}
                     </div>
-                    <span>{item.title}</span>
+                    <Link className="product-title" href={`/products/${item.id}-${item.slug}`}>
+                      {item.title}
+                    </Link>
                     <Button
-                      title="Comprar"
+                      title="Adicionar ao carrinho"
                       color={'neutral'}
                       icon={<ShoppingCart weight="fill" />}
                     />

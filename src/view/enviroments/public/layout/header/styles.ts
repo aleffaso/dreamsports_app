@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Device } from '../../../../../helpers/screens';
 import { DisplayFlexCenter, DisplayFlexCenterBetween } from '../../../../../styles';
 import { transformFont } from '../../../../../utils';
+import { transparentize } from 'polished';
 
 export const Wrapper = styled.header`
   width: 100vw;
@@ -46,7 +47,7 @@ export const Header = styled.section`
   width: 100%;
   height: 92px;
   background-color: ${({ theme }) => theme.colors.shades.white};
-  box-shadow: inset 0 0 5px 0 ${({ theme }) => theme.colors.shades.black}3F;
+  box-shadow: inset 0 0 5px 0 ${({ theme }) => transparentize(0.75, theme.colors.shades.black)};
   ${DisplayFlexCenter}
   & > div {
     ${DisplayFlexCenterBetween}

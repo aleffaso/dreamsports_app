@@ -4,10 +4,7 @@ import {
   InstagramLogo,
   TwitterLogo,
   Phone,
-  Envelope,
-  MagnifyingGlass,
-  ShoppingCart,
-  User
+  Envelope
 } from 'phosphor-react';
 
 export const menuList = [
@@ -39,40 +36,4 @@ export const contactsList = [
 export const addressList = [
   { title: '(14) 9 9999-9999', href: '/', icon: <Phone /> },
   { title: 'contato@dreamsportsco.com', href: '/', icon: <Envelope /> }
-];
-
-export const barList = [
-  {
-    variant: null,
-    rounded: null,
-    color: 'transparent',
-    icon: <MagnifyingGlass />,
-    title: null,
-    description: null,
-    type: null,
-    disabled: null,
-    onClick: null
-  },
-  {
-    variant: null,
-    rounded: null,
-    color: 'transparent',
-    icon: <ShoppingCart />,
-    title: null,
-    description: null,
-    type: null,
-    disabled: null,
-    onClick: null
-  },
-  {
-    variant: null,
-    rounded: null,
-    color: 'transparent',
-    icon: <User />,
-    title: null,
-    description: null,
-    type: null,
-    disabled: null,
-    onClick: null
-  }
 ];

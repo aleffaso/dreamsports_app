@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { categoriesCatalogue } from '../../../../home-page/components/sections/categories/mapped';
-import { addressList, menuList } from '../../../header/mapped';
+import { addressList, menuList } from '../../../mapped';
 import { Article } from './components/article';
 import * as S from './styles';
 
