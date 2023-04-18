@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Device } from '../../../../../../helpers/screens';
 import { DisplayFlexCenter } from '../../../../../../styles';
 import { transformFont } from '../../../../../../utils';
+import { transparentize } from 'polished';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -20,25 +21,10 @@ export const Wrapper = styled.section`
     justify-content: flex-start;
     padding: 15px 30px 30px 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 1px ${({ theme }) => theme.colors.shades.black}3F;
+    box-shadow: 0px 0px 1px ${({ theme }) => transparentize(0.25, theme.colors.shades.black)};
 
-    & > textarea {
-      height: 150px;
-      border: 2px solid ${({ theme }) => theme.colors.neutral.n400};
-      border-radius: 5px;
-      font-size: ${transformFont.toRem(16)};
-      padding: 10px;
-      resize: none;
-      outline: none;
-      &:focus {
-        border: 2px solid ${({ theme }) => theme.colors.neutral.n800};
-      }
-      &:focus:required:invalid {
-        border: 2px solid ${({ theme }) => theme.colors.red.r600};
-      }
-      &::placeholder {
-        opacity: 0.7;
-      }
+    @media ${Device.max('mobile', 'lg')} {
+      max-width: 380px;
     }
   }
 `;

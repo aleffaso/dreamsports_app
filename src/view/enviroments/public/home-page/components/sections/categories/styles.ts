@@ -43,7 +43,7 @@ export const CategoryBody = styled.div`
     padding: 20px 0;
     font-size: ${transformFont.toRem(20)};
   }
-  & > img {
+  & > a > img {
     border: 1px solid ${({ theme }) => theme.colors.neutral.n300};
     border-radius: 50%;
     cursor: pointer;

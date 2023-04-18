@@ -5,7 +5,7 @@ import { Button } from '../../../../../components/buttons/button';
 import { Card } from '../../../../../components/card';
 import { StarRating } from '../../../../../components/star-rating';
 import { categoriesCatalogue } from '../../../home-page/components/sections/categories/mapped';
-import { productsList } from './mapped';
+import { productsList } from '../../mapped';
 import * as S from './styles';
 import Link from 'next/link';
 
@@ -42,7 +42,8 @@ export const Products = () => {
               <>
                 {productsList.map((item, index) => (
                   <S.CardBody key={index}>
-                    <Link href={`/products/${item.id}-${item.slug}`}>
+                    <Link
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
                       <Image src={item.src} alt={item.title} width={400} height={300} />
                     </Link>
                     <div className="ratingPrice">
@@ -51,7 +52,9 @@ export const Products = () => {
                       </div>
                       {formatCurrency(item.price)}
                     </div>
-                    <Link className="product-title" href={`/products/${item.id}-${item.slug}`}>
+                    <Link
+                      className="product-title"
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
                       {item.title}
                     </Link>
                     <Button

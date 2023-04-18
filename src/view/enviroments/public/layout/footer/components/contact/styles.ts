@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
   padding-top: 16px;
   padding: 20px 0;
   @media ${Device.max('tablet', 'md')} {
+    display: flex;
     flex-direction: column;
     gap: 10px;
   }

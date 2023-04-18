@@ -3,6 +3,7 @@ import { Button } from '../../../../../../components/buttons/button';
 import { Card } from '../../../../../../components/card';
 import { categoriesCatalogue } from './mapped';
 import * as S from './styles';
+import Link from 'next/link';
 
 export const Categories = () => {
   return (
@@ -14,9 +15,13 @@ export const Categories = () => {
           <>
             {categoriesCatalogue.map((item, index) => (
               <S.CategoryBody key={index}>
-                <Image src={item.src} alt={item.title} width={300} height={300} />
+                <Link href={`/products?category=${item.slug}`}>
+                  <Image src={item.src} alt={item.title} width={300} height={300} />
+                </Link>
                 <span>{item.title}</span>
-                <Button title="Comprar" color={'neutral'} />
+                <Link href={`/products?category=${item.slug}`}>
+                  <Button title="Ver mais" color={'neutral'} />
+                </Link>
               </S.CategoryBody>
             ))}
           </>

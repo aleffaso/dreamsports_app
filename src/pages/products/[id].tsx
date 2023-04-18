@@ -1,3 +1,5 @@
+import { ProductPage } from '../../view/enviroments/public/products/product';
+
 export default function Product() {
-  return <p>entrou!</p>;
+  return <ProductPage />;
 }

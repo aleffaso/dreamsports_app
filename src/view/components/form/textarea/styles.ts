@@ -10,7 +10,7 @@ export const Wrapper = styled.div<{ hasIcon: boolean }>`
   justify-content: flex-start;
   & .container {
     width: 100%;
-    height: 35px;
+    height: 135px;
     border-radius: 5px;
     font-size: ${transformFont.toRem(16)};
     position: relative;
@@ -26,13 +26,16 @@ export const Wrapper = styled.div<{ hasIcon: boolean }>`
         color: ${({ theme }) => theme.colors.neutral.n300};
       }
     }
-    & > input {
+    & > textarea {
       width: 100%;
       height: 100%;
       outline: none;
       border-radius: inherit;
-      padding-left: ${({ hasIcon }) => (hasIcon ? 35 : 10)}px;
+      padding-left: ${({ hasIcon }) => (hasIcon ? 45 : 10)}px;
       border: 2px solid ${({ theme }) => theme.colors.neutral.n400};
+      padding: 10px;
+      resize: none;
+      outline: none;
       &:focus {
         border: 2px solid ${({ theme }) => theme.colors.neutral.n800};
       }

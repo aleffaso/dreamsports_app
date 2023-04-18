@@ -1,10 +1,24 @@
+import { Form } from 'react-final-form';
 import * as S from './styles';
-type Props = { content: React.ReactNode };
+import { Input } from '../../../../../../../../components/form/input';
+import { Button } from '../../../../../../../../components/buttons/button';
+import { At, PaperPlaneTilt } from 'phosphor-react';
 
-export const Subscribe = ({ content }: Props) => {
+export const Subscribe = () => {
+  const handleSubmit = (data: any) => {
+    console.log(data);
+  };
   return (
-    <S.Wrapper>
-      <div>{content}</div>
-    </S.Wrapper>
+    <Form
+      onSubmit={handleSubmit}
+      render={({ handleSubmit }) => (
+        <S.Wrapper>
+          <form onSubmit={handleSubmit}>
+            <Input icon={<At />} name="subscribe" placeholder="Seu e-mail" type="text" />
+            <Button title="Se inscrever" type="submit" icon={<PaperPlaneTilt weight="fill" />} />
+          </form>
+        </S.Wrapper>
+      )}
+    />
   );
 };

@@ -187,12 +187,17 @@ export const CardBody = styled.div`
       text-decoration: underline;
     }
   }
+
+  & > button {
+    margin-top: 10px;
+  }
+
   @media ${Device.max('tablet', 'md')} {
     & > div {
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};
       }
-      &:nth-child(2) {
+      & > a.product-title {
         font-size: ${transformFont.toRem(16)};
       }
     }
@@ -205,7 +210,7 @@ export const CardBody = styled.div`
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};
       }
-      &:nth-child(2) {
+      & > a.product-title {
         font-size: ${transformFont.toRem(20)};
       }
     }

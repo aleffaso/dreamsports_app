@@ -5,7 +5,8 @@ import * as S from './styles';
 import { StarRating } from '../../../../../../components/star-rating';
 import { formatCurrency } from '../../../../../../../utils';
 import { Button } from '../../../../../../components/buttons/button';
-import { ShoppingCart } from 'phosphor-react';
+import { Eye } from 'phosphor-react';
+import Link from 'next/link';
 
 export const Products = () => {
   return (
@@ -17,7 +18,9 @@ export const Products = () => {
           <>
             {productsCatalogue.map((item, index) => (
               <S.CardBody key={index}>
-                <Image src={item.src} alt={item.title} width={400} height={300} />
+                <Link href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                  <Image src={item.src} alt={item.title} width={400} height={300} />
+                </Link>
                 <div className="ratingPrice">
                   <div>
                     <StarRating rating={item.rating} />
@@ -26,7 +29,9 @@ export const Products = () => {
                 </div>
                 <span>{item.title}</span>
                 <p>{item.info}</p>
-                <Button title="Comprar" color={'neutral'} icon={<ShoppingCart weight="fill" />} />
+                <Link href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                  <Button title="Ver mais" color={'neutral'} icon={<Eye weight="fill" />} />
+                </Link>
               </S.CardBody>
             ))}
           </>

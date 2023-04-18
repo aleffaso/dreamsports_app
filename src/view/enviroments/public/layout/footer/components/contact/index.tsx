@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { PaperPlaneTilt } from 'phosphor-react';
-import { Button } from '../../../../../../components/buttons/button';
 import { contactsList } from '../../../mapped';
 import { Contacts } from './components/contacts';
 import { Subscribe } from './components/subscribe';
@@ -20,17 +18,7 @@ export const Contact = () => {
           </>
         }
       />
-      <Subscribe
-        content={
-          <>
-            {/**Vericar melhor forma de fazer formulário */}
-            <form>
-              <input type="text" placeholder="E-mail" />
-              <Button title="Se inscrever" type="submit" icon={<PaperPlaneTilt weight="fill" />} />
-            </form>
-          </>
-        }
-      />
+      <Subscribe />
     </S.Wrapper>
   );
 };

@@ -1,39 +1,24 @@
 import styled from 'styled-components';
-import { Device } from '../../../../../../../helpers/screens';
 import { DisplayFlexCenter } from '../../../../../../../styles';
 import { transformFont } from '../../../../../../../utils';
+import { Device } from '../../../../../../../helpers/screens';
 
 export const Wrapper = styled.section`
-  background-color: ${({ theme }) => theme.colors.neutral.n400};
-  padding: 30px 0 0 0;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.neutral.n300};
+  padding: 30px;
   & > h1 {
     ${DisplayFlexCenter}
     font-weight: 600;
-    font-size: ${transformFont.toRem(40)};
+    font-size: ${transformFont.toRem(30)};
     color: ${({ theme }) => theme.colors.neutral.n800};
-  }
-  & > p {
-    margin: 0 25%;
-    text-align: center;
-    padding: 30px 0 0 0;
-    font-weight: 300;
-    font-size: ${transformFont.toRem(24)};
-    color: ${({ theme }) => theme.colors.neutral.n800};
-
-    @media ${Device.max('tablet', 'md')} {
-      margin: 0 15%;
-    }
-
-    @media ${Device.max('mobile', 'lg')} {
-      margin: 0 0;
-    }
   }
 `;
 
 export const CardBody = styled.div`
   width: min(400px, 100%);
-  height: 510px;
-  background-color: ${({ theme }) => theme.colors.shades.white};
+  height: 500px;
+  background-color: ${({ theme }) => theme.colors.neutral.n100};
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -44,7 +29,7 @@ export const CardBody = styled.div`
   img {
     transition: 0.5s ease;
     &:hover {
-      opacity: 0.7;
+      opacity: 0.5;
     }
   }
   & > .ratingPrice {
@@ -60,31 +45,31 @@ export const CardBody = styled.div`
       gap: 4px;
     }
   }
-  & > span {
-    font-size: ${transformFont.toRem(22)};
+  & > a.product-title {
+    padding: 0 0 15px 0;
+    font-size: ${transformFont.toRem(20)};
     color: ${({ theme }) => theme.colors.neutral.n900};
     text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  & > p {
-    width: 100%;
-    font-size: ${transformFont.toRem(18)};
-    color: ${({ theme }) => theme.colors.neutral.n900};
-    text-align: center;
-    padding: 0 18px;
-    height: 45px;
-    overflow: hidden;
+
+  & > button {
+    margin-top: 10px;
   }
+
   @media ${Device.max('tablet', 'md')} {
     & > div {
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};
       }
-      &:nth-child(3) {
-        font-size: ${transformFont.toRem(20)};
+      & > a.product-title {
+        font-size: ${transformFont.toRem(16)};
       }
-      &:nth-child(4) {
-        font-size: ${transformFont.toRem(14)};
-      }
+    }
+    & > span {
+      font-size: ${transformFont.toRem(18)};
     }
   }
   @media ${Device.max('mobile', 'lg')} {
@@ -92,12 +77,12 @@ export const CardBody = styled.div`
       & > .ratingPrice {
         font-size: ${transformFont.toRem(18)};
       }
-      &:nth-child(3) {
+      & > a.product-title {
         font-size: ${transformFont.toRem(20)};
       }
-      &:nth-child(4) {
-        font-size: ${transformFont.toRem(14)};
-      }
+    }
+    & > span {
+      font-size: ${transformFont.toRem(22)};
     }
   }
 `;

@@ -26,3 +26,12 @@ export const currentYear = () => {
 export const currentDateTime = () => {
   return new Date().toLocaleString() + '';
 };
+
+export const normalizeStringValue = (value: string) => {
+  return value != null
+    ? value
+        .toString()
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '') + (value ?? '')
+    : '';
+};
