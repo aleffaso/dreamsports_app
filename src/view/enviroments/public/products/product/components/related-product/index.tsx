@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Card } from '../../../../../../components/card';
-import { productsList } from '../../../mapped';
+import { productsList } from '../../../../mapped';
 import * as S from './styles';
 import Image from 'next/image';
 import { StarRating } from '../../../../../../components/star-rating';
@@ -21,7 +21,7 @@ export const RelatedProduct = () => {
           <>
             {productsList.map(
               (item, index) =>
-                item.category == category && (
+                item.category[0].title === category && (
                   <S.CardBody key={index}>
                     <Link
                       href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
@@ -29,7 +29,7 @@ export const RelatedProduct = () => {
                     </Link>
                     <div className="ratingPrice">
                       <div>
-                        <StarRating rating={item.rating} />
+                        <StarRating rating={item.rate} />
                       </div>
                       {formatCurrency(item.price)}
                     </div>

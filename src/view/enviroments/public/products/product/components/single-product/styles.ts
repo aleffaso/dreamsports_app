@@ -27,13 +27,35 @@ export const ImageContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.neutral.n300};
   border-radius: 10px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-  & > div {
-    ${DisplayFlexCenter};
-    & > img {
-      width: 250px;
-      height: auto;
+  & > .main-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+  }
+
+  & > .thumb-image {
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    & > button {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      transition: 0.3s;
+      overflow: hidden;
+      position: relative;
       &:hover {
+        opacity: 0.5;
+      }
+      &.selected {
         opacity: 0.5;
       }
     }

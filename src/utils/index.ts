@@ -4,6 +4,8 @@
  * @returns font rem
  */
 
+import { ProductImages } from '../types';
+
 interface ITransformFont {
   toRem: (value: number) => string;
 }
@@ -34,4 +36,14 @@ export const normalizeStringValue = (value: string) => {
         .normalize('NFD')
         .replace(/\p{Diacritic}/gu, '') + (value ?? '')
     : '';
+};
+
+export const findMainImage = (images: ProductImages[] | undefined) => {
+  if (!images) return 'failed_image.png';
+
+  const image = images?.find((value) => value.main)?.src;
+  if (image) {
+    return image;
+  }
+  return images[0].src;
 };

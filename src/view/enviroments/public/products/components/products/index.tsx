@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { CaretDown, MagnifyingGlass, ShoppingCart } from 'phosphor-react';
-import { formatCurrency } from '../../../../../../utils';
+import { findMainImage, formatCurrency } from '../../../../../../utils';
 import { Button } from '../../../../../components/buttons/button';
 import { Card } from '../../../../../components/card';
 import { StarRating } from '../../../../../components/star-rating';
 import { categoriesCatalogue } from '../../../home-page/components/sections/categories/mapped';
-import { productsList } from '../../mapped';
+import { productsList } from '../../../mapped';
 import * as S from './styles';
 import Link from 'next/link';
 
@@ -44,11 +44,16 @@ export const Products = () => {
                   <S.CardBody key={index}>
                     <Link
                       href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
-                      <Image src={item.src} alt={item.title} width={400} height={300} />
+                      <Image
+                        src={`/products/lg/${findMainImage(item.images)}`}
+                        alt={item.title}
+                        width={400}
+                        height={300}
+                      />
                     </Link>
                     <div className="ratingPrice">
                       <div>
-                        <StarRating rating={item.rating} />
+                        <StarRating rating={item.rate} />
                       </div>
                       {formatCurrency(item.price)}
                     </div>

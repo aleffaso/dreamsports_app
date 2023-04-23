@@ -2,9 +2,9 @@ import { Field } from 'react-final-form';
 import { TextareaProps } from '..';
 import { ErrorField } from '../../styles';
 
-export const TextareaField = ({ name, type, ...rest }: TextareaProps) => {
+export const TextareaField = ({ name, ...rest }: TextareaProps) => {
   return (
-    <Field name={name} type={type}>
+    <Field name={name}>
       {({ input, meta }) => (
         <>
           <textarea

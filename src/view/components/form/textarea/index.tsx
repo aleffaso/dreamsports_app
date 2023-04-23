@@ -7,29 +7,20 @@ import * as S from './styles';
 export type TextareaProps = {
   label?: string;
   name: string;
-  type: 'text';
   icon?: ReactNode;
   placeholder?: string;
   hidden?: boolean;
   notForm?: boolean;
 };
 
-export const Textarea = ({
-  label,
-  name,
-  type,
-  icon,
-  placeholder,
-  hidden,
-  notForm
-}: TextareaProps) => {
+export const Textarea = ({ label, name, icon, placeholder, hidden, notForm }: TextareaProps) => {
   return (
     <S.Wrapper hasIcon={!!icon}>
       {label && <Label>{label}</Label>}
       <div className="container">
         {icon && <i>{icon}</i>}
-        {notForm ? <TextareaPure {...{ type, placeholder }} /> : null}
-        {!notForm ? <TextareaField {...{ name, type, placeholder }} /> : null}
+        {notForm ? <TextareaPure {...{ placeholder }} /> : null}
+        {!notForm ? <TextareaField {...{ name, placeholder }} /> : null}
       </div>
     </S.Wrapper>
   );
