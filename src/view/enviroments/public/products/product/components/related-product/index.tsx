@@ -25,7 +25,12 @@ export const RelatedProduct = () => {
                   <S.CardBody key={index}>
                     <Link
                       href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
-                      <Image src={item.src} alt={item.title} width={400} height={300} />
+                      <Image
+                        src={`/products/sm/${item.src}`}
+                        alt={item?.title}
+                        width={400}
+                        height={300}
+                      />
                     </Link>
                     <div className="ratingPrice">
                       <div>

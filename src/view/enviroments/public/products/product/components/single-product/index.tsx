@@ -7,6 +7,7 @@ import { StarRating } from '../../../../../../components/star-rating';
 import { Button } from '../../../../../../components/buttons/button';
 import { CurrencyCircleDollar, RadioButton, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
+import { Product } from '../../../../../../../types';
 
 export const SingleProduct = (): JSX.Element | any => {
   const router = useRouter();
