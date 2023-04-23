@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 export const RelatedProduct = () => {
   const router = useRouter();
   const category = router.query.Category;
+  const number = 0;
   return (
     <S.Wrapper>
       <h1>Produtos relacionados</h1>
@@ -21,10 +22,10 @@ export const RelatedProduct = () => {
           <>
             {productsList.map(
               (item, index) =>
-                item.category[0].title === category && (
+                item.category[number].title === category && (
                   <S.CardBody key={index}>
                     <Link
-                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category[number].title}`}>
                       <Image
                         src={`/products/sm/${item.src}`}
                         alt={item?.title}
@@ -40,7 +41,7 @@ export const RelatedProduct = () => {
                     </div>
                     <Link
                       className="product-title"
-                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category[number].title}`}>
                       {item.title}
                     </Link>
                     <Button

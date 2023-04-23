@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { productsList } from '../../../../mapped';
 
 export const Products = () => {
+  const number = 0;
   return (
     <S.Wrapper>
       <h1>Produtos</h1>
@@ -38,7 +39,7 @@ export const Products = () => {
                     <span>{item.title}</span>
                     <p>{item.info}</p>
                     <Link
-                      href={`/products/${item.id}?Product=${item.slug}&Category=${item.category}`}>
+                      href={`/products/${item.id}?Product=${item.slug}&Category=${item.category[number].title}`}>
                       <Button title="Ver mais" color={'neutral'} icon={<Eye weight="fill" />} />
                     </Link>
                   </S.CardBody>
