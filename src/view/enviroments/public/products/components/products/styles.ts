@@ -35,27 +35,46 @@ export const Categories = styled.div`
     margin: 20px 0;
   }
 
-  & > div {
+  & > .filters {
+    width: 100%;
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 30px;
-    border-color: ${({ theme }) => theme.colors.neutral.n800};
-    border-top: 1px solid ${({ theme }) => theme.colors.neutral.n400};
     padding: 10px 0;
-    & > button {
-      height: 30px;
-      font-size: ${transformFont.toRem(14)};
+    & > div {
+      width: 100%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      border-color: ${({ theme }) => theme.colors.neutral.n800};
+      border-top: 1px solid ${({ theme }) => theme.colors.neutral.n400};
+      padding-top: 5px;
+      & > button {
+        width: 50px;
+        height: 30px;
+        font-size: ${transformFont.toRem(14)};
+      }
     }
   }
 
   @media ${Device.max('tablet', 'md')} {
     width: 240px;
     min-height: 2842.5px;
-    & > div {
-      & > span {
-        font-size: ${transformFont.toRem(14)};
+    & > .filters {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      & > div {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        & > span {
+          font-size: ${transformFont.toRem(14)};
+        }
       }
     }
   }

@@ -23,7 +23,7 @@ export const Wrapper = styled.section`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  min-height: 540px;
+  min-height: 700px;
   background-color: ${({ theme }) => theme.colors.neutral.n300};
   border-radius: 10px;
   overflow: hidden;
@@ -32,7 +32,7 @@ export const ImageContainer = styled.div`
 
   & > .main-image {
     width: 100%;
-    height: 350px;
+    min-height: 500px;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
     position: relative;
@@ -72,7 +72,7 @@ export const ImageContainer = styled.div`
 
 export const InfoContainer = styled.div`
   width: 100%;
-  min-height: 540px;
+  min-height: 700px;
   background-color: ${({ theme }) => theme.colors.neutral.n100};
   border-radius: 10px;
   padding: 30px;
@@ -103,6 +103,9 @@ export const InfoContainer = styled.div`
 
   & > .info {
     display: grid;
+    border-color: ${({ theme }) => theme.colors.neutral.n800};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.n400};
+    padding-bottom: 15px;
     & > h3 {
       border-color: ${({ theme }) => theme.colors.neutral.n800};
       border-top: 1px solid ${({ theme }) => theme.colors.neutral.n400};
@@ -157,10 +160,13 @@ export const InfoContainer = styled.div`
       text-align: justify;
       font-size: ${transformFont.toRem(16)};
       padding-bottom: 15px;
-      & > button {
-        font-size: ${transformFont.toRem(14)};
-        & > svg {
-          font-size: 16px;
+      & > div {
+        display: flex;
+        & > button {
+          font-size: ${transformFont.toRem(14)};
+          & > svg {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -172,24 +178,53 @@ export const InfoContainer = styled.div`
       text-align: justify;
       font-size: ${transformFont.toRem(16)};
       padding-bottom: 15px;
-      & > button {
-        font-size: ${transformFont.toRem(14)};
-        & > svg {
-          font-size: 16px;
+      & > div {
+        display: flex;
+        gap: 5px;
+        & > button {
+          font-size: ${transformFont.toRem(14)};
+          & > svg {
+            font-size: 16px;
+          }
         }
       }
     }
 
-    border-color: ${({ theme }) => theme.colors.neutral.n800};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.n400};
-    padding-bottom: 15px;
+    @media ${Device.max('mobile', 'lg')} {
+      display: flex;
+      flex-direction: column;
+      & > .colors {
+        display: flex;
+        flex-direction: column;
+        & > div {
+          display: grid;
+          gap: 10px;
+          grid-template-columns: repeat(2, 1fr);
+          padding-top: 10px;
+        }
+      }
+      & > .sizes {
+        display: flex;
+        flex-direction: column;
+        & > div {
+          display: grid;
+          gap: 10px;
+          grid-template-columns: repeat(2, 1fr);
+          padding-top: 10px;
+        }
+      }
+    }
   }
 
-  @media ${Device.max('tablet', 'md')} {
-    min-height: 340px;
-  }
-
-  @media ${Device.max('mobile', 'lg')} {
-    min-height: 340px;
+  & > div {
+    width: 100%;
+    ${DisplayFlexCenter}
+    gap: 10px;
+    padding-top: 20px;
+    @media ${Device.max('mobile', 'lg')} {
+      & > button {
+        font-size: ${transformFont.toRem(16)};
+      }
+    }
   }
 `;

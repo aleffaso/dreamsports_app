@@ -15,13 +15,27 @@ export const Products = () => {
       <div>
         <S.Categories>
           <h2>Filtros</h2>
-          <div>
-            <span>Preços</span>
-            <Button color="neutral" icon={<CaretDown weight="fill" />} />
-          </div>
-          <div>
-            <span>Cores</span>
-            <Button color="neutral" icon={<CaretDown weight="fill" />} />
+          <div className="filters">
+            <div>
+              <span>Preços</span>
+              <Button color="neutral" icon={<CaretDown weight="fill" />} />
+            </div>
+            <div>
+              <span>Cores</span>
+              <Button color="neutral" icon={<CaretDown weight="fill" />} />
+            </div>
+            <div>
+              <span>Tamanhos</span>
+              <Button color="neutral" icon={<CaretDown weight="fill" />} />
+            </div>
+            <div>
+              <span>Avaliações</span>
+              <Button color="neutral" icon={<CaretDown weight="fill" />} />
+            </div>
+            <div>
+              <span>Em estoque</span>
+              <Button color="neutral" icon={<CaretDown weight="fill" />} />
+            </div>
           </div>
         </S.Categories>
         <S.Products>

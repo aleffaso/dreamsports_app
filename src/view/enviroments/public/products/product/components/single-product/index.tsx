@@ -5,21 +5,20 @@ import { productsList } from '../../../../mapped';
 import { findMainImage, formatCurrency } from '../../../../../../../utils';
 import { StarRating } from '../../../../../../components/star-rating';
 import { Button } from '../../../../../../components/buttons/button';
-import { RadioButton } from 'phosphor-react';
+import { CurrencyCircleDollar, RadioButton, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
 
-export const SingleProduct = () => {
+export const SingleProduct = (): JSX.Element | any => {
   const router = useRouter();
+  const id = router.query.id;
+
+  const product = productsList.find((item) => item.id === Number(id));
 
   const [imageMain, setImageMain] = useState<{ id: number; src: string } | undefined>(undefined);
 
-  const id = router.query.id;
-  const product = productsList.find((item) => item.id === Number(id));
-
   const handleImageMain = (id: number, src: string) => {
-    setImageMain({ id, src });
+    return setImageMain({ id, src });
   };
-
   return (
     product && (
       <S.Wrapper>
@@ -82,31 +81,43 @@ export const SingleProduct = () => {
 
             <div className="colors">
               <h4>Cores disponíveis:</h4>
-              {product.colors.map((item, index) => (
-                <Button
-                  key={index}
-                  title={item.name}
-                  color="neutral"
-                  icon={<RadioButton />}
-                  rounded
-                  variant="solid"
-                />
-              ))}
+              <div>
+                {product.colors.map((item, index) => (
+                  <Button
+                    key={index}
+                    title={item.name}
+                    color="neutral"
+                    icon={<RadioButton />}
+                    rounded
+                    variant="solid"
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="sizes">
               <h4>Tamanhos disponíveis:</h4>
-              {product.sizes.map((item, index) => (
-                <Button
-                  key={index}
-                  title={item}
-                  color="neutral"
-                  icon={<RadioButton />}
-                  rounded
-                  variant="solid"
-                />
-              ))}
+              <div>
+                {product.sizes.map((item, index) => (
+                  <Button
+                    key={index}
+                    title={item}
+                    color="neutral"
+                    icon={<RadioButton />}
+                    rounded
+                    variant="solid"
+                  />
+                ))}
+              </div>
             </div>
+          </div>
+          <div>
+            <Button
+              title="Adicionar ao carrinho"
+              color={'neutral'}
+              icon={<ShoppingCart weight="fill" />}
+            />
+            <Button title="Comprar" color={'green'} icon={<CurrencyCircleDollar weight="fill" />} />
           </div>
         </S.InfoContainer>
       </S.Wrapper>
