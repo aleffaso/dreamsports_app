@@ -2,6 +2,7 @@ import { MouseEventHandler } from 'react';
 import * as S from './styles';
 
 export type Props = {
+  id?: string;
   variant?: string | 'solid' | 'outline';
   rounded?: boolean;
   color?: string | 'primary' | 'neutral' | 'success' | 'warning' | 'error' | 'transparent';
@@ -14,6 +15,7 @@ export type Props = {
 };
 
 export const Button = ({
+  id,
   variant,
   rounded,
   color,
@@ -26,6 +28,7 @@ export const Button = ({
 }: Props) => {
   return (
     <S.Wrapper
+      id={id}
       variant={variant}
       rounded={rounded}
       color={color}

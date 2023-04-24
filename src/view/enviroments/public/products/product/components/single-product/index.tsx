@@ -5,9 +5,10 @@ import { productsList } from '../../../../mapped';
 import { findMainImage, formatCurrency } from '../../../../../../../utils';
 import { StarRating } from '../../../../../../components/star-rating';
 import { Button } from '../../../../../../components/buttons/button';
-import { CurrencyCircleDollar, RadioButton, ShoppingCart } from 'phosphor-react';
+import { CurrencyCircleDollar, Minus, Plus, RadioButton, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
-import { Product } from '../../../../../../../types';
+import { Input } from '../../../../../../components/form/input';
+import { Form } from 'react-final-form';
 
 export const SingleProduct = (): JSX.Element | any => {
   const router = useRouter();
@@ -20,6 +21,21 @@ export const SingleProduct = (): JSX.Element | any => {
   const handleImageMain = (id: number, src: string) => {
     return setImageMain({ id, src });
   };
+
+  const [value, setValue] = useState<{ value: number } | any>(1);
+
+  const handleValue = (oldValue: string) => {
+    if (oldValue === 'plus') {
+      return setValue(value + 1);
+    } else if (oldValue === 'plus' || value !== 0) {
+      return setValue(value - 1);
+    }
+  };
+
+  const handleSubmit = (data: any) => {
+    return;
+  };
+
   return (
     product && (
       <S.Wrapper>
@@ -112,7 +128,33 @@ export const SingleProduct = (): JSX.Element | any => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="info-footer">
+            <div className="quantity">
+              <Button
+                color={'neutral'}
+                icon={<Minus weight="fill" />}
+                rounded
+                onClick={() => {
+                  handleValue('minus');
+                }}
+              />
+              <Form
+                onSubmit={handleSubmit}
+                render={({ handleSubmit }) => (
+                  <form onSubmit={handleSubmit}>
+                    <Input name="value" type="number" value={value} />
+                  </form>
+                )}
+              />
+              <Button
+                color={'neutral'}
+                icon={<Plus weight="fill" />}
+                rounded
+                onClick={() => {
+                  handleValue('plus');
+                }}
+              />
+            </div>
             <Button
               title="Adicionar ao carrinho"
               color={'neutral'}

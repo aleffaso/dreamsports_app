@@ -6,6 +6,7 @@ import * as S from './styles';
 import Link from 'next/link';
 
 export const Categories = () => {
+  const number = 0;
   return (
     <S.Wrapper>
       <h1>Categorias</h1>

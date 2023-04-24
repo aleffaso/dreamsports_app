@@ -22,12 +22,13 @@ export const RelatedProduct = () => {
           <>
             {productsList.map(
               (item, index) =>
+                index < 3 &&
                 item.category[number].title === category && (
                   <S.CardBody key={index}>
                     <Link
                       href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category[number].title}`}>
                       <Image
-                        src={`/products/sm/${item.src}`}
+                        src={`/products/sm/${item.images[number].src}`}
                         alt={item?.title}
                         width={400}
                         height={300}

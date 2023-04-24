@@ -1,5 +1,7 @@
 export type ProductCategories = {
   id: number;
+  href?: string;
+  src?: string;
   title?: string;
   slug?: string;
 }[];

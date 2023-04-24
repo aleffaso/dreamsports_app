@@ -10,6 +10,7 @@ import * as S from './styles';
 import Link from 'next/link';
 
 export const Products = () => {
+  const number = 0;
   return (
     <S.Wrapper>
       <div>
@@ -57,7 +58,7 @@ export const Products = () => {
                 {productsList.map((item, index) => (
                   <S.CardBody key={index}>
                     <Link
-                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category[number].title}`}>
                       <Image
                         src={`/products/lg/${findMainImage(item.images)}`}
                         alt={item.title}
@@ -73,7 +74,7 @@ export const Products = () => {
                     </div>
                     <Link
                       className="product-title"
-                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category[number].title}`}>
                       {item.title}
                     </Link>
                     <Button

@@ -7,6 +7,7 @@ export const Wrapper = styled.button<{
   variant: Props['variant'];
   rounded?: boolean;
   color: Props['color'];
+  description?: string;
 }>`
   cursor: pointer;
   padding: 0 16px;

@@ -22,7 +22,7 @@ export const Products = () => {
                 index < 3 && (
                   <S.CardBody key={index}>
                     <Link
-                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category}`}>
+                      href={`/products/${item.id}?Product=${item.slug}?&Category=${item.category[number].title}`}>
                       <Image
                         src={`/products/lg/${findMainImage(item.images)}`}
                         alt={item.title}

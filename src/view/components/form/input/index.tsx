@@ -10,9 +10,12 @@ export type InputProps = {
   type: 'text' | 'number' | 'password' | 'date';
   icon?: ReactNode;
   placeholder?: string;
+  defaultValue?: string | number;
+  value?: string | number;
   hidden?: boolean;
   mask?: 'CPF' | 'PHONE';
   notForm?: boolean;
+  onChange?: React.ChangeEvent<HTMLInputElement> | undefined;
 };
 
 export const Input = ({
@@ -22,8 +25,11 @@ export const Input = ({
   icon,
   placeholder,
   hidden,
+  value,
+  defaultValue,
   mask,
-  notForm
+  notForm,
+  onChange
 }: InputProps) => {
   return (
     <S.Wrapper hasIcon={!!icon}>
@@ -31,7 +37,9 @@ export const Input = ({
       <div className="container">
         {icon && <i>{icon}</i>}
         {notForm ? <InputPure {...{ type, placeholder }} /> : null}
-        {!notForm ? <InputField {...{ name, type, placeholder, mask }} /> : null}
+        {!notForm ? (
+          <InputField {...{ name, type, placeholder, mask, value, defaultValue, onChange }} />
+        ) : null}
       </div>
     </S.Wrapper>
   );

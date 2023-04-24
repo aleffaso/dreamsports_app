@@ -23,7 +23,6 @@ export const Wrapper = styled.section`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  min-height: 700px;
   background-color: ${({ theme }) => theme.colors.neutral.n300};
   border-radius: 10px;
   overflow: hidden;
@@ -32,7 +31,7 @@ export const ImageContainer = styled.div`
 
   & > .main-image {
     width: 100%;
-    min-height: 500px;
+    min-height: 380px;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
     position: relative;
@@ -72,7 +71,7 @@ export const ImageContainer = styled.div`
 
 export const InfoContainer = styled.div`
   width: 100%;
-  min-height: 700px;
+  min-height: 580px;
   background-color: ${({ theme }) => theme.colors.neutral.n100};
   border-radius: 10px;
   padding: 30px;
@@ -216,14 +215,42 @@ export const InfoContainer = styled.div`
     }
   }
 
-  & > div {
+  & > .info-footer {
     width: 100%;
     ${DisplayFlexCenter}
     gap: 10px;
     padding-top: 20px;
+
+    & > .quantity {
+      ${DisplayFlexCenter}
+      gap:10px;
+      & > form {
+        & > div {
+          & > div {
+            width: 40px;
+            border-radius: 10px;
+            font-size: ${transformFont.toRem(18)};
+            &::placeholder {
+              font-size: ${transformFont.toRem(18)};
+            }
+          }
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+        }
+      }
+    }
     @media ${Device.max('mobile', 'lg')} {
-      & > button {
-        font-size: ${transformFont.toRem(16)};
+      display: flex;
+      flex-direction: column;
+      & > .info-footer {
+        & > .quantity {
+          display: flex;
+          gap: 10px;
+        }
+        & > button {
+          font-size: ${transformFont.toRem(16)};
+        }
       }
     }
   }
