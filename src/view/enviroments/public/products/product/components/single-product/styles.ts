@@ -223,21 +223,22 @@ export const InfoContainer = styled.div`
 
     & > .quantity {
       ${DisplayFlexCenter}
-      gap:10px;
-      & > form {
-        & > div {
-          & > div {
-            width: 40px;
-            border-radius: 10px;
-            font-size: ${transformFont.toRem(18)};
-            &::placeholder {
-              font-size: ${transformFont.toRem(18)};
-            }
-          }
-          input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-          }
+      & > button {
+        &:first-child {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
         }
+        &:last-child {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+      & > span {
+        width: 40px;
+        text-align: center;
+        font-size: ${transformFont.toRem(18)};
+        background: ${({ theme }) => theme.colors.shades.white};
+        padding: 10.5px 0;
       }
     }
     @media ${Device.max('mobile', 'lg')} {

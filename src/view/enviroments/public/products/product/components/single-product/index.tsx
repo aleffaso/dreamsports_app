@@ -7,10 +7,8 @@ import { StarRating } from '../../../../../../components/star-rating';
 import { Button } from '../../../../../../components/buttons/button';
 import { CurrencyCircleDollar, Minus, Plus, RadioButton, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
-import { Input } from '../../../../../../components/form/input';
-import { Form } from 'react-final-form';
 
-export const SingleProduct = (): JSX.Element | any => {
+export const SingleProduct = () => {
   const router = useRouter();
   const id = router.query.id;
 
@@ -22,13 +20,14 @@ export const SingleProduct = (): JSX.Element | any => {
     return setImageMain({ id, src });
   };
 
-  const [value, setValue] = useState<{ value: number } | any>(1);
+  const [value, setValue] = useState<number>(1);
 
-  const handleValue = (oldValue: string) => {
-    if (oldValue === 'plus') {
-      return setValue(value + 1);
-    } else if (oldValue === 'plus' || value !== 0) {
-      return setValue(value - 1);
+  const handleValue = (control: string) => {
+    if (control === 'increase') {
+      setValue((old) => old + 1);
+    }
+    if (control === 'decrease') {
+      setValue((old) => (old === 0 ? 0 : old - 1));
     }
   };
 
@@ -36,134 +35,125 @@ export const SingleProduct = (): JSX.Element | any => {
     return;
   };
 
-  return (
-    product && (
-      <S.Wrapper>
-        <S.ImageContainer>
-          <div className="main-image">
-            <Image
-              src={`/products/lg/${imageMain?.src ?? findMainImage(product?.images)}`}
-              style={{ objectFit: 'cover' }}
-              alt={product.title}
-              sizes="50vw"
-              fill
-            />
+  return product ? (
+    <S.Wrapper>
+      <S.ImageContainer>
+        <div className="main-image">
+          <Image
+            src={`/products/lg/${imageMain?.src ?? findMainImage(product?.images)}`}
+            style={{ objectFit: 'cover' }}
+            alt={product.title}
+            sizes="50vw"
+            fill
+          />
+        </div>
+        <div className="thumb-image">
+          {product.images?.map((item) => (
+            <button
+              className={imageMain?.id === item.id ? 'selected' : ''}
+              key={item.id}
+              onClick={() => handleImageMain(item.id, item.src)}>
+              <Image
+                src={`/products/sm/${item.src}`}
+                style={{ objectFit: 'cover' }}
+                alt={item.title}
+                sizes="50vw"
+                fill
+              />
+            </button>
+          ))}
+        </div>
+      </S.ImageContainer>
+      <S.InfoContainer>
+        <h1 className="title">{product.title}</h1>
+        <h2 className="price">{formatCurrency(product.price)}</h2>
+        <div className="rating">
+          <h4>Avaliações:</h4>
+          {<StarRating rating={product.rate} />}
+        </div>
+
+        <div className="info">
+          <h3>Mais informações</h3>
+          <div className="brand">
+            <h4>Marca:</h4>
+            <p>{product.brand}</p>
           </div>
-          <div className="thumb-image">
-            {product.images?.map((item) => (
-              <button
-                className={imageMain?.id === item.id ? 'selected' : ''}
-                key={item.id}
-                onClick={() => handleImageMain(item.id, item.src)}>
-                <Image
-                  src={`/products/sm/${item.src}`}
-                  style={{ objectFit: 'cover' }}
-                  alt={item.title}
-                  sizes="50vw"
-                  fill
+
+          <div className="description">
+            <h4>Descrição:</h4>
+            <p>{product.description}</p>
+          </div>
+
+          <div className="inventory">
+            <h4>Em estoque:</h4>
+            <p>{product.inventory}</p>
+          </div>
+
+          <div className="specifications">
+            <h4>Especificações:</h4>
+            <p>{product.specifications}</p>
+          </div>
+
+          <div className="colors">
+            <h4>Cores disponíveis:</h4>
+            <div>
+              {product.colors.map((item, index) => (
+                <Button
+                  key={index}
+                  title={item.name}
+                  color="neutral"
+                  icon={<RadioButton />}
+                  rounded
+                  variant="solid"
                 />
-              </button>
-            ))}
-          </div>
-        </S.ImageContainer>
-        <S.InfoContainer>
-          <h1 className="title">{product.title}</h1>
-          <h2 className="price">{formatCurrency(product.price)}</h2>
-          <div className="rating">
-            <h4>Avaliações:</h4>
-            {<StarRating rating={product.rate} />}
-          </div>
-
-          <div className="info">
-            <h3>Mais informações</h3>
-            <div className="brand">
-              <h4>Marca:</h4>
-              <p>{product.brand}</p>
-            </div>
-
-            <div className="description">
-              <h4>Descrição:</h4>
-              <p>{product.description}</p>
-            </div>
-
-            <div className="inventory">
-              <h4>Em estoque:</h4>
-              <p>{product.inventory}</p>
-            </div>
-
-            <div className="specifications">
-              <h4>Especificações:</h4>
-              <p>{product.specifications}</p>
-            </div>
-
-            <div className="colors">
-              <h4>Cores disponíveis:</h4>
-              <div>
-                {product.colors.map((item, index) => (
-                  <Button
-                    key={index}
-                    title={item.name}
-                    color="neutral"
-                    icon={<RadioButton />}
-                    rounded
-                    variant="solid"
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="sizes">
-              <h4>Tamanhos disponíveis:</h4>
-              <div>
-                {product.sizes.map((item, index) => (
-                  <Button
-                    key={index}
-                    title={item}
-                    color="neutral"
-                    icon={<RadioButton />}
-                    rounded
-                    variant="solid"
-                  />
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-          <div className="info-footer">
-            <div className="quantity">
-              <Button
-                color={'neutral'}
-                icon={<Minus weight="fill" />}
-                rounded
-                onClick={() => {
-                  handleValue('minus');
-                }}
-              />
-              <Form
-                onSubmit={handleSubmit}
-                render={({ handleSubmit }) => (
-                  <form onSubmit={handleSubmit}>
-                    <Input name="value" type="number" value={value} />
-                  </form>
-                )}
-              />
-              <Button
-                color={'neutral'}
-                icon={<Plus weight="fill" />}
-                rounded
-                onClick={() => {
-                  handleValue('plus');
-                }}
-              />
+
+          <div className="sizes">
+            <h4>Tamanhos disponíveis:</h4>
+            <div>
+              {product.sizes.map((item, index) => (
+                <Button
+                  key={index}
+                  title={item}
+                  color="neutral"
+                  icon={<RadioButton />}
+                  rounded
+                  variant="solid"
+                />
+              ))}
             </div>
+          </div>
+        </div>
+        <div className="info-footer">
+          <div className="quantity">
             <Button
-              title="Adicionar ao carrinho"
               color={'neutral'}
-              icon={<ShoppingCart weight="fill" />}
+              icon={<Minus weight="fill" />}
+              rounded
+              onClick={() => {
+                handleValue('decrease');
+              }}
             />
-            <Button title="Comprar" color={'green'} icon={<CurrencyCircleDollar weight="fill" />} />
+            <span>{value}</span>
+            <Button
+              color={'neutral'}
+              icon={<Plus weight="fill" />}
+              rounded
+              onClick={() => {
+                handleValue('increase');
+              }}
+            />
           </div>
-        </S.InfoContainer>
-      </S.Wrapper>
-    )
-  );
+          <Button
+            title="Adicionar ao carrinho"
+            color={'neutral'}
+            icon={<ShoppingCart weight="fill" />}
+          />
+          <Button title="Comprar" color={'green'} icon={<CurrencyCircleDollar weight="fill" />} />
+        </div>
+      </S.InfoContainer>
+    </S.Wrapper>
+  ) : null;
 };
