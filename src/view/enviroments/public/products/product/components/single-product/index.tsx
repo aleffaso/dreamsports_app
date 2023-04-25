@@ -31,10 +31,6 @@ export const SingleProduct = () => {
     }
   };
 
-  const handleSubmit = (data: any) => {
-    return;
-  };
-
   return product ? (
     <S.Wrapper>
       <S.ImageContainer>

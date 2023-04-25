@@ -15,7 +15,7 @@ export type InputProps = {
   hidden?: boolean;
   mask?: 'CPF' | 'PHONE';
   notForm?: boolean;
-  onChange?: React.ChangeEvent<HTMLInputElement> | undefined;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 export const Input = ({
