@@ -47,3 +47,11 @@ export const findMainImage = (images: ProductImages[] | undefined) => {
   }
   return images[0].src;
 };
+
+export const removeSpecialChars = (string: string) => {
+  return string
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w\s]|_/g, '')
+    .replace(/\d+/g, '');
+};
