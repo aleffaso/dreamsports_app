@@ -1,0 +1,24 @@
+import { KEYS } from '../../constants';
+import { HttpClient } from '../../infra/http';
+import { AuthServicesTypes } from './types';
+
+export const authServices: AuthServicesTypes = {
+  authenticate: async <T>(email: string, password: string) => {
+    const { result } = await HttpClient<T>('POST', {
+      host: 'http://localhost:80',
+      path: '/user/authenticate',
+      data: { email, password },
+      validations: { codeSuccess: 200, messageError: 'Oops! Algo deu errado' }
+    });
+    return result;
+  },
+  revalidateToken: async <T>(refreshToken: string) => {
+    const { result } = await HttpClient<T>('POST', {
+      host: 'http://localhost:80',
+      path: '/user/revalidate-token',
+      data: { refreshToken },
+      validations: { codeSuccess: 200, messageError: 'Oops! Algo deu errado' }
+    });
+    return result;
+  }
+};

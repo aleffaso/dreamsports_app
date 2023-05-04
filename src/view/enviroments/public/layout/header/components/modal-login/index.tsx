@@ -3,7 +3,8 @@ import * as S from './styles';
 import { Form } from 'react-final-form';
 import { Input } from '../../../../../../components/form/input';
 import { Button } from '../../../../../../components/buttons/button';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { authServices } from '../../../../../../../contexts/auth/services';
 
 type Props = {
   handleClose: () => void;
@@ -11,8 +12,18 @@ type Props = {
 
 export const ModalLogin = ({ handleClose }: Props) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
-  const handleSubmit = (data: any) => {
-    console.log(data);
+  const [error, setError] = useState<string | undefined>(undefined);
+  const handleSubmit = async ({ email, password }: { email: string; password: string }) => {
+    try {
+      const { data, error, messageError } = await authServices.authenticate(email, password);
+      if (error) {
+        setError(messageError);
+        return;
+      }
+      console.log(data);
+    } catch {
+      throw new Error('Problema na autenticação');
+    }
   };
   const handleClickOutside = useCallback(
     (e: MouseEvent) => {
