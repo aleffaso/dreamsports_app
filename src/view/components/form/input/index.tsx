@@ -29,16 +29,17 @@ export const Input = ({
   defaultValue,
   mask,
   notForm,
-  onChange
+  onChange,
+  ...rest
 }: InputProps) => {
   return (
     <S.Wrapper hasIcon={!!icon}>
       {label && <Label>{label}</Label>}
       <div className="container">
         {icon && <i>{icon}</i>}
-        {notForm ? <InputPure {...{ type, placeholder }} /> : null}
+        {notForm ? <InputPure {...{ name, type, placeholder, value, onChange, rest }} /> : null}
         {!notForm ? (
-          <InputField {...{ name, type, placeholder, mask, value, defaultValue, onChange }} />
+          <InputField {...{ name, type, placeholder, mask, value, defaultValue, rest }} />
         ) : null}
       </div>
     </S.Wrapper>

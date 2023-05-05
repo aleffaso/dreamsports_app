@@ -4,23 +4,27 @@ import { Form } from 'react-final-form';
 import { Input } from '../../../../../../components/form/input';
 import { Button } from '../../../../../../components/buttons/button';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { authServices } from '../../../../../../../contexts/auth/services';
+import { useAuth } from '../../../../../../../hooks/auth';
+import { useRouter } from 'next/router';
 
 type Props = {
   handleClose: () => void;
 };
 
 export const ModalLogin = ({ handleClose }: Props) => {
+  const { authenticate } = useAuth();
+  const router = useRouter();
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [error, setError] = useState<string | undefined>(undefined);
   const handleSubmit = async ({ email, password }: { email: string; password: string }) => {
     try {
-      const { data, error, messageError } = await authServices.authenticate(email, password);
+      const { data, error, messageError } = await authenticate(email, password);
       if (error) {
         setError(messageError);
         return;
       }
-      console.log(data);
+      console.log('aqui');
+      router.push(PUBLIC_ROUTES.ABOUT);
     } catch {
       throw new Error('Problema na autenticação');
     }

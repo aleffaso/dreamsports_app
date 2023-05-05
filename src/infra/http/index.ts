@@ -6,7 +6,6 @@ export const HttpClient = <T = unknown, D = unknown, S = unknown>(
   method: HttpRequestTypes,
   { ...params }: HttpParamsRequest<D, S>
 ) => {
-  console.log('aqui ', params);
   const api = client(params.host, params.defaultHeaders, params.headers);
   const config = params.config as AxiosRequestConfig<unknown> | undefined;
   const methods = {

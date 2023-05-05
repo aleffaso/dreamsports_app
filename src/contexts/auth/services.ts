@@ -5,16 +5,17 @@ import { AuthServicesTypes } from './types';
 export const authServices: AuthServicesTypes = {
   authenticate: async <T>(email: string, password: string) => {
     const { result } = await HttpClient<T>('POST', {
-      host: 'http://localhost:80',
+      host: KEYS.HOST.API_URL,
       path: '/user/authenticate',
       data: { email, password },
       validations: { codeSuccess: 200, messageError: 'Oops! Algo deu errado' }
     });
+    console.log('services ', result);
     return result;
   },
   revalidateToken: async <T>(refreshToken: string) => {
     const { result } = await HttpClient<T>('POST', {
-      host: 'http://localhost:80',
+      host: KEYS.HOST.API_URL,
       path: '/user/revalidate-token',
       data: { refreshToken },
       validations: { codeSuccess: 200, messageError: 'Oops! Algo deu errado' }

@@ -42,7 +42,7 @@ export const client = (
         try {
           const refresh = parseCookies()[KEYS.STORAGE.USER.REFRESH_TOKEN];
           const { data, error } = await authServices.revalidateToken(refresh);
-          if (error) {
+          if (!error) {
             createJWTCookie(data.token, KEYS.STORAGE.USER.TOKEN);
             createJWTCookie(data.refreshToken, KEYS.STORAGE.USER.REFRESH_TOKEN);
             return instance(err.config);
@@ -76,7 +76,7 @@ export const core = async <T>(
     if (validations?.others) {
       validations.others(response.status, response.data);
     }
-    if (!!validations?.codeSuccess && response.status !== validations.codeSuccess) {
+    if (!!validations?.codeSuccess && response.status !== validations?.codeSuccess) {
       throw new Error(
         (response.data as any)[validations.paramMessageError || 'Error'] || validations.messageError
       );
@@ -84,7 +84,7 @@ export const core = async <T>(
     result.data = response.data;
   } catch (error) {
     result.error = true;
-    result.code = response.status || 500;
+    result.code = response?.status || 500;
     result.messageError = (error as Error).message ?? validations?.messageError;
   }
   return {
