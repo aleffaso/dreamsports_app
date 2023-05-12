@@ -1,6 +1,6 @@
 import { createContext, useCallback, useState } from 'react';
 import { AuthContextDataType, AuthContextProps, UserType } from './types';
-import { parseCookies } from 'nookies';
+import { parseCookies, setCookie } from 'nookies';
 import { KEYS } from '../../constants';
 import { authServices } from './services';
 import { createJWTCookie } from '../../utils';
@@ -27,9 +27,8 @@ export const AuthProvider = ({ children }: AuthContextProps) => {
         };
       }
 
-      setUser({ ...response.data.user });
-      // createJWTCookie(JSON.stringify(response.data.user), 'TESTE1');
-      // createJWTCookie(response.data.token, 'TESTE2');
+      setCookie(undefined, KEYS.STORAGE.USER.DATA, JSON.stringify(response.data.user));
+      createJWTCookie(response.data.token, KEYS.STORAGE.USER.TOKEN);
       //TODO REFRESH TOKEN
 
       return {
