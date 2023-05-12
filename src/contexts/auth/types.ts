@@ -7,7 +7,12 @@ export type UserType = {
   admin: boolean;
   is_active: boolean;
 };
-export type UserResponseType = {
+
+export type DoesNotExistError = {
+  message?: string;
+  statusCode?: number;
+};
+export type UserResponseType = DoesNotExistError & {
   user: UserType;
   token: string;
 };
@@ -22,7 +27,7 @@ export type AuthContextProps = {
 };
 
 export type AuthContextDataType = {
-  user: UserResponseType['user'] | null;
+  user: UserType | null;
   authenticate: AuthServicesTypes['authenticate'];
   // revalidateToken: AuthServicesTypes['revalidateToken'];
 };

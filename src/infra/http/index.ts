@@ -15,5 +15,6 @@ export const HttpClient = <T = unknown, D = unknown, S = unknown>(
     PATCH: () => api.patch(params.path, params.data, config),
     DELETE: () => api.delete(params.path, config)
   };
+
   return core<T>(params, methods[method]);
 };

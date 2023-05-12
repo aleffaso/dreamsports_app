@@ -10,7 +10,7 @@ export const authServices: AuthServicesTypes = {
       data: { email, password },
       validations: { codeSuccess: 200, messageError: 'Oops! Algo deu errado' }
     });
-    console.log('services ', result);
+
     return result;
   },
   revalidateToken: async <T>(refreshToken: string) => {

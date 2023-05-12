@@ -65,7 +65,7 @@ export const core = async <T>(
   method: () => Promise<AxiosResponse<T>>
 ) => {
   let response: AxiosResponse<T> = {} as AxiosResponse<T>;
-  const result: HttpResponse = { code: 0, data: {}, error: false, messageError: '' };
+  const result: HttpResponse = { code: 10, data: {}, error: false, messageError: '' };
   const validations = params.validations;
 
   try {
