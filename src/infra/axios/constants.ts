@@ -17,7 +17,7 @@ export const CUSTOM_HEADERS: { [Properties in HttpDefaultHeaders]: AxiosRequestH
 };
 
 export const result: HttpResponse = {
-  code: 0,
+  codeSuccess: 0,
   data: {},
   error: false,
   messageError: ''
