@@ -15,16 +15,13 @@ export const AuthProvider = ({ children }: AuthContextProps) => {
   const authenticate = async (email: string, password: string) => {
     try {
       const response = await authServices.authenticate(email, password);
-      console.log('antes do if ', response);
       if (response.error) {
-        console.log('error context');
         throw new Error(response.messageError);
       }
       setUser({ ...response.data.user });
       createJWTCookie(JSON.stringify(response.data.user), KEYS.STORAGE.USER.DATA);
       createJWTCookie(response.data.token, KEYS.STORAGE.USER.TOKEN);
       //TODO REFRESH TOKEN
-      console.log('context');
       return response;
     } catch (error) {
       setUser(null);
@@ -32,7 +29,6 @@ export const AuthProvider = ({ children }: AuthContextProps) => {
       destroyCookie(null, KEYS.STORAGE.USER.TOKEN, { path: '/' });
       //TODO REFRESH TOKEN
     }
-    console.log('antes do return');
     return {
       data: {
         user: {

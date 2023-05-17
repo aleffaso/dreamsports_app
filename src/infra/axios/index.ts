@@ -65,7 +65,7 @@ export const core = async <T>(
   method: () => Promise<AxiosResponse<T>>
 ) => {
   let response: AxiosResponse<T> = {} as AxiosResponse<T>;
-  const result: HttpResponse = { code: 0, data: {}, error: false, messageError: '' };
+  const result: HttpResponse = { codeSuccess: 0, data: {}, error: false, messageError: '' };
   const validations = params.validations;
 
   try {
@@ -84,7 +84,7 @@ export const core = async <T>(
     result.data = response.data;
   } catch (error) {
     result.error = true;
-    result.code = response?.status || 500;
+    result.codeSuccess = response?.status || 500;
     result.messageError = (error as Error).message ?? validations?.messageError;
   }
   return {

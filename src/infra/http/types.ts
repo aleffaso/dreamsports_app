@@ -7,10 +7,19 @@ export type HttpHeaders = {
 export type HttpRequestTypes = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
 export type HttpResponse<T = unknown | unknown[]> = {
-  code?: number;
+  codeSuccess?: number;
   data: T;
   error: boolean;
   messageError?: string;
+};
+
+export type StandardResponse<T = unknown | unknown[]> = {
+  status: {
+    code: number;
+    responseType: string;
+    message: string;
+  };
+  result: T;
 };
 
 export type HttpParamsRequest<T = unknown, S = unknown> = {
