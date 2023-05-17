@@ -6,6 +6,7 @@ import { Button } from '../../../../../../components/buttons/button';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../../../../../../hooks/auth';
 import { useRouter } from 'next/router';
+import { useOnRequest } from '../../../../../../../hooks/on-request';
 
 type Props = {
   handleClose: () => void;
@@ -15,19 +16,19 @@ export const ModalLogin = ({ handleClose }: Props) => {
   const { authenticate } = useAuth();
   const router = useRouter();
   const contentRef = useRef<HTMLDivElement | null>(null);
-  const [error, setError] = useState<string | undefined>(undefined);
+  const { onRequest, isError, textError } = useOnRequest();
+
   const handleSubmit = async ({ email, password }: { email: string; password: string }) => {
-    try {
-      const { data, error, messageError } = await authenticate(email, password);
-      if (error) {
-        setError(messageError);
-        return;
-      }
-      console.log('aqui');
-      router.push(PUBLIC_ROUTES.ABOUT);
-    } catch {
-      throw new Error('Problema na autenticação');
+    const { data, error } = await authenticate(email, password);
+
+    if (error || data.message || data.statusCode) {
+      console.log(data);
+      onRequest.error(data.message);
+      return;
     }
+
+    router.push('/about');
+    return;
   };
   const handleClickOutside = useCallback(
     (e: MouseEvent) => {
@@ -48,6 +49,7 @@ export const ModalLogin = ({ handleClose }: Props) => {
           <X />
         </button>
         <h2>Entrar</h2>
+        {isError && <p>{textError}</p>}
         <Form
           onSubmit={handleSubmit}
           render={({ handleSubmit }) => (
